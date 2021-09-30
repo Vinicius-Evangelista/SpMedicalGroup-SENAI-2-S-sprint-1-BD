@@ -11,6 +11,8 @@ SELECT * FROM medico;
 SELECT * FROM prontuario;
 SELECT * FROM situacao;
 SELECT * FROM agendamento;
+SELECT * FROM imagemUsuario;
+
 
 SELECT nome, nomeMedico, dataConsulta, idSituacao
 FROM agendamento

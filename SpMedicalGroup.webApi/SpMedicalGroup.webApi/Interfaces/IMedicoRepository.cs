@@ -21,6 +21,6 @@ namespace SpMedicalGroup.webApi.Interfaces
         /// Adiciona uma descricao no agendamento
         /// </summary>
         /// <param name="idConsultas"> id do agendamento que será colocado a descrição </param>
-        void AdicionarDescricao(int idAgendamento, Agendamento agendamentoAtualizado);
+        void AdicionarDescricao(int idAgendamento, Agendamento agendamentoDescricao);
     }
 }

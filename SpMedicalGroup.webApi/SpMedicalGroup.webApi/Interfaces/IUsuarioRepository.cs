@@ -1,4 +1,5 @@
 ﻿
+using Microsoft.AspNetCore.Http;
 using SpMedicalGroup.webApi.Domains;
 using System;
 using System.Collections.Generic;
@@ -41,6 +42,32 @@ namespace SpMedicalGroup.webApi.Interfaces
         /// </summary>
         /// <returns>uma lista de consultas</returns>
         List<Agendamento> ListarAgendamentos();
+
+        /// <summary>
+        /// lista todos os prontuarios
+        /// </summary>
+        /// <returns>uma lista de prontuarios</returns>
+        List<Prontuario> ListarProntuarios();
+
+        /// <summary>
+        /// lista todos o medicos
+        /// </summary>
+        /// <returns> uma lista de médicos</returns>
+        List<Medico> ListarMedicos();
+
+        /// <summary>
+        /// verifica a foto de perfil de um usuario
+        /// </summary>
+        /// <param name="id_usuario">id do usuario que será requisitado</param>
+        /// <returns>a foto de perfil de um usuário</returns>
+        string ConsultaPerfil(int id_usuario);
+
+        /// <summary>
+        /// salve a foto de perfil no banco de dados
+        /// </summary>
+        /// <param name="foto">foto enviada</param>
+        /// <param name="id_usuario">id do usuario que a enviou</param>
+        void SalvarPerfilBD(IFormFile foto, int id_usuario);
 
         /// <summary>
         /// Verifica se há um usuário existente

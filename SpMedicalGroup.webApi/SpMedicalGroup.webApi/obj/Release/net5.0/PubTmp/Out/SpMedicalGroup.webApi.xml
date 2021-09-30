@@ -1,0 +1,107 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>SpMedicalGroup.webApi</name>
+    </assembly>
+    <members>
+        <member name="T:SpMedicalGroup.webApi.Interfaces.IMedicoRepository">
+            <summary>
+             Interface responsável por Medico
+            </summary>
+        </member>
+        <member name="M:SpMedicalGroup.webApi.Interfaces.IMedicoRepository.ListarMedicoAgendamentos(System.Int32)">
+            <summary>
+            Lista todas as consultas pertecentes a um médico
+            </summary>
+            <param name="idMedico">id do medico que será usado para validação</param>
+            <returns>Uma lista de agendamentos</returns>
+        </member>
+        <member name="M:SpMedicalGroup.webApi.Interfaces.IMedicoRepository.AdicionarDescricao(System.Int32,SpMedicalGroup.webApi.Domains.Agendamento)">
+            <summary>
+            Adiciona uma descricao no agendamento
+            </summary>
+            <param name="idConsultas"> id do agendamento que será colocado a descrição </param>
+        </member>
+        <member name="T:SpMedicalGroup.webApi.Interfaces.IProntuarioRepository">
+            <summary>
+            interface responsável por Prontuario
+            </summary>
+        </member>
+        <member name="M:SpMedicalGroup.webApi.Interfaces.IProntuarioRepository.ListarPacienteAgendamentos(System.Int32)">
+            <summary>
+            Lista as consultas do paciente
+            </summary>
+            <param name="idPaciente">id do paciente usado validação</param>
+            <returns>uma lista de paciente</returns>
+        </member>
+        <member name="T:SpMedicalGroup.webApi.Interfaces.IUsuarioRepository">
+            <summary>
+            interfaces reponsável por Usuario
+            </summary>
+        </member>
+        <member name="M:SpMedicalGroup.webApi.Interfaces.IUsuarioRepository.CadastrarUsuario(SpMedicalGroup.webApi.Domains.Usuario)">
+            <summary>
+            Cadastra um novo usuario
+            </summary>
+            <param name="novoUsuario">Objeto com as informações do novo usuário</param>
+        </member>
+        <member name="M:SpMedicalGroup.webApi.Interfaces.IUsuarioRepository.Agendar(SpMedicalGroup.webApi.Domains.Agendamento)">
+            <summary>
+            Casdastra um novo agendamento
+            </summary>
+            <param name="novoAgendamento">Objeto com as informações do novo agendamento</param>
+        </member>
+        <member name="M:SpMedicalGroup.webApi.Interfaces.IUsuarioRepository.CancelarAgendamento(System.Int32)">
+            <summary>
+            Cancela um Agendamento
+            </summary>
+            <param name="idConsulta">id da Consulta que será cancelada</param>
+        </member>
+        <member name="M:SpMedicalGroup.webApi.Interfaces.IUsuarioRepository.CadastrarClinica(SpMedicalGroup.webApi.Domains.Clinica)">
+            <summary>
+            Cadastra uma nova clínica
+            </summary>
+            <param name="novaClinica">Objeto com as novas Clinas</param>
+        </member>
+        <member name="M:SpMedicalGroup.webApi.Interfaces.IUsuarioRepository.ListarAgendamentos">
+            <summary>
+            Lista todas as consultas
+            </summary>
+            <returns>uma lista de consultas</returns>
+        </member>
+        <member name="M:SpMedicalGroup.webApi.Interfaces.IUsuarioRepository.ListarProntuarios">
+            <summary>
+            lista todos os prontuarios
+            </summary>
+            <returns>uma lista de prontuarios</returns>
+        </member>
+        <member name="M:SpMedicalGroup.webApi.Interfaces.IUsuarioRepository.ListarMedicos">
+            <summary>
+            lista todos o medicos
+            </summary>
+            <returns> uma lista de médicos</returns>
+        </member>
+        <member name="M:SpMedicalGroup.webApi.Interfaces.IUsuarioRepository.ConsultaPerfil(System.Int32)">
+            <summary>
+            verifica a foto de perfil de um usuario
+            </summary>
+            <param name="id_usuario">id do usuario que será requisitado</param>
+            <returns>a foto de perfil de um usuário</returns>
+        </member>
+        <member name="M:SpMedicalGroup.webApi.Interfaces.IUsuarioRepository.SalvarPerfilBD(Microsoft.AspNetCore.Http.IFormFile,System.Int32)">
+            <summary>
+            salve a foto de perfil no banco de dados
+            </summary>
+            <param name="foto">foto enviada</param>
+            <param name="id_usuario">id do usuario que a enviou</param>
+        </member>
+        <member name="M:SpMedicalGroup.webApi.Interfaces.IUsuarioRepository.Login(System.String,System.String)">
+            <summary>
+            Verifica se há um usuário existente
+            </summary>
+            <param name="senha">senha do usuario</param>
+            <param name="email">email do usuario</param>
+            <returns>Um token com as informações de acesso do usuairo</returns>
+        </member>
+    </members>
+</doc>

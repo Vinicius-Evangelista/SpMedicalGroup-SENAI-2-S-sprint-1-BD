@@ -1,0 +1,516 @@
+{
+	"info": {
+		"_postman_id": "6cd245cb-18c1-4703-b9b9-0f358f4d23e7",
+		"name": "senai.SpMedicalGroup.Tarde",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Medico",
+			"item": [
+				{
+					"name": "ListarMedicoConsultas",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{TokenMedico}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \r\n    \"descricao\" : \"nada não\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:5001/api/medicos/listar",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "5001",
+							"path": [
+								"api",
+								"medicos",
+								"listar"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "AdicionarDescricao",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InJpY2FyZG8ubGVtb3NAc3BtZWRpY2FsZ3JvdXAuY29tLmJyIiwianRpIjoiMSIsImh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vd3MvMjAwOC8wNi9pZGVudGl0eS9jbGFpbXMvcm9sZSI6IjIiLCJleHAiOjE2MzI4NTUwMjUsImlzcyI6IlNwTWVkaWNhbEdyb3VwLndlYkFwaSIsImF1ZCI6IlNwTWVkaWNhbEdyb3VwLndlYkFwaSJ9.eDLOc-zhTxGEvfNYDI1uxBNmZeSuogNZSKGstloWhlw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"Descricao\" : \"Tudo ok\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:5001/api/medicos/8",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "5001",
+							"path": [
+								"api",
+								"medicos",
+								"8"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Login",
+			"item": [
+				{
+					"name": "Login",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InJpY2FyZG8ubGVtb3NAc3BtZWRpY2FsZ3JvdXAuY29tLmJyIiwianRpIjoiMSIsImh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vd3MvMjAwOC8wNi9pZGVudGl0eS9jbGFpbXMvcm9sZSI6IjIiLCJleHAiOjE2MzI4NTUwMjUsImlzcyI6IlNwTWVkaWNhbEdyb3VwLndlYkFwaSIsImF1ZCI6IlNwTWVkaWNhbEdyb3VwLndlYkFwaSJ9.eDLOc-zhTxGEvfNYDI1uxBNmZeSuogNZSKGstloWhlw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"Email\": \"ricardo.lemos@spmedicalgroup.com.br\",\r\n    \"Senha\": \"12345678\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:5001/api/login/login",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "5001",
+							"path": [
+								"api",
+								"login",
+								"login"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Administrador",
+			"item": [
+				{
+					"name": "CancelarConsulta",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InZpbmkuZXZhbmdlbGlzdGFAbGl2ZS5jb20iLCJqdGkiOiIxMSIsImh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vd3MvMjAwOC8wNi9pZGVudGl0eS9jbGFpbXMvcm9sZSI6IjMiLCJleHAiOjE2MzI4NDMzODQsImlzcyI6IlNwTWVkaWNhbEdyb3VwLndlYkFwaSIsImF1ZCI6IlNwTWVkaWNhbEdyb3VwLndlYkFwaSJ9.3NCkeZCwsjH2TlmYVVzRbP3_z1IlyMHNKqsz5yNf0rE",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:5001/api/usuarios/cancelar/consulta/8",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "5001",
+							"path": [
+								"api",
+								"usuarios",
+								"cancelar",
+								"consulta",
+								"8"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "CadastrarClinica",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InZpbmkuZXZhbmdlbGlzdGFAbGl2ZS5jb20iLCJqdGkiOiIxMSIsImh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vd3MvMjAwOC8wNi9pZGVudGl0eS9jbGFpbXMvcm9sZSI6IjMiLCJleHAiOjE2MzI4NTQxODIsImlzcyI6IlNwTWVkaWNhbEdyb3VwLndlYkFwaSIsImF1ZCI6IlNwTWVkaWNhbEdyb3VwLndlYkFwaSJ9.R5-8a-XvQxwew97eY_ta5Fn3gL41OTXln--AH_zHmdA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\r\n\"NomeFantasia\" : \"BvBooks livraria\",\r\n\"RazaoSocial\" : \"BvBooks\",\r\n\"Cnpj\" : \"30.568.754/0001-40\",\r\n\"HorarioFuncionamento\" : \"00:00:00\"\r\n\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:5001/api/usuarios/clinica",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "5001",
+							"path": [
+								"api",
+								"usuarios",
+								"clinica"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Agendar",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InZpbmkuZXZhbmdlbGlzdGFAbGl2ZS5jb20iLCJqdGkiOiIxMSIsImh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vd3MvMjAwOC8wNi9pZGVudGl0eS9jbGFpbXMvcm9sZSI6IjMiLCJleHAiOjE2MzI4NTQxODIsImlzcyI6IlNwTWVkaWNhbEdyb3VwLndlYkFwaSIsImF1ZCI6IlNwTWVkaWNhbEdyb3VwLndlYkFwaSJ9.R5-8a-XvQxwew97eY_ta5Fn3gL41OTXln--AH_zHmdA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"idMedico\": 1,\r\n    \"idProntuario\": 4,\r\n    \"idSituacao\": 2,\r\n    \"dataConsulta\": \"09/12/2022\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:5001/api/usuarios/admin",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "5001",
+							"path": [
+								"api",
+								"usuarios",
+								"admin"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "CadastrarUsuario",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InZpbmkuZXZhbmdlbGlzdGFAbGl2ZS5jb20iLCJqdGkiOiIxMSIsImh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vd3MvMjAwOC8wNi9pZGVudGl0eS9jbGFpbXMvcm9sZSI6IjMiLCJleHAiOjE2MzI4NTQxODIsImlzcyI6IlNwTWVkaWNhbEdyb3VwLndlYkFwaSIsImF1ZCI6IlNwTWVkaWNhbEdyb3VwLndlYkFwaSJ9.R5-8a-XvQxwew97eY_ta5Fn3gL41OTXln--AH_zHmdA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"idTipoUsuario\" : 3,\r\n    \"Nome\" : \"Vinicius Evangelista\",\r\n    \"Email\": \"vini.evagelista@live.com\",\r\n    \"senha\":\"admin123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:5001/api/usuarios",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "5001",
+							"path": [
+								"api",
+								"usuarios"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ListarTodosAgendamentos",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InJpY2FyZG8ubGVtb3NAc3BtZWRpY2FsZ3JvdXAuY29tLmJyIiwianRpIjoiMSIsImh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vd3MvMjAwOC8wNi9pZGVudGl0eS9jbGFpbXMvcm9sZSI6IjIiLCJleHAiOjE2MzI5NDMwOTQsImlzcyI6IlNwTWVkaWNhbEdyb3VwLndlYkFwaSIsImF1ZCI6IlNwTWVkaWNhbEdyb3VwLndlYkFwaSJ9.GPSAwoFTwhippuR_4JXuPKG5yQfJhULozmOLyd6zWlA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:5001/api/usuarios/listar",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "5001",
+							"path": [
+								"api",
+								"usuarios",
+								"listar"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ListarTodosPacientes",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InZpbmkuZXZhbmdlbGlzdGFAbGl2ZS5jb20iLCJqdGkiOiIxMSIsImh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vd3MvMjAwOC8wNi9pZGVudGl0eS9jbGFpbXMvcm9sZSI6IjMiLCJleHAiOjE2MzI4NTQxODIsImlzcyI6IlNwTWVkaWNhbEdyb3VwLndlYkFwaSIsImF1ZCI6IlNwTWVkaWNhbEdyb3VwLndlYkFwaSJ9.R5-8a-XvQxwew97eY_ta5Fn3gL41OTXln--AH_zHmdA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:5001/api/usuarios/listar/pacientes",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "5001",
+							"path": [
+								"api",
+								"usuarios",
+								"listar",
+								"pacientes"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ListarTodosMedicos",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InZpbmkuZXZhbmdlbGlzdGFAbGl2ZS5jb20iLCJqdGkiOiIxMSIsImh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vd3MvMjAwOC8wNi9pZGVudGl0eS9jbGFpbXMvcm9sZSI6IjMiLCJleHAiOjE2MzI4NTQxODIsImlzcyI6IlNwTWVkaWNhbEdyb3VwLndlYkFwaSIsImF1ZCI6IlNwTWVkaWNhbEdyb3VwLndlYkFwaSJ9.R5-8a-XvQxwew97eY_ta5Fn3gL41OTXln--AH_zHmdA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:5001/api/usuarios/listar/medicos",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "5001",
+							"path": [
+								"api",
+								"usuarios",
+								"listar",
+								"medicos"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Prontuario",
+			"item": [
+				{
+					"name": "ListarProntuarioConsultas",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InZpbmljaXVzZXZhbmdlbGlzdGE0NDhAZ21haWwuY29tIiwianRpIjoiMTMiLCJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3JvbGUiOiIxIiwiZXhwIjoxNjMyODQ2NzMwLCJpc3MiOiJTcE1lZGljYWxHcm91cC53ZWJBcGkiLCJhdWQiOiJTcE1lZGljYWxHcm91cC53ZWJBcGkifQ.Ho2GWAbopsTUH8AUk6hVGHRfQk4wzUkwEnKoloop2Qc",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:5001/api/prontuarios/listar/4",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "5001",
+							"path": [
+								"api",
+								"prontuarios",
+								"listar",
+								"4"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "DevolverImagem",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{medico 2}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "arquivo",
+							"type": "file",
+							"src": "/C:/Users/Vinicius/OneDrive/Imagens/Capturas de tela/2021-03-08.png"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://localhost:5001/api/usuarios/imagem",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "5001",
+					"path": [
+						"api",
+						"usuarios",
+						"imagem"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Enviar imagem",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{medico 2}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "arquivo",
+							"type": "file",
+							"src": "/C:/Users/Vinicius/OneDrive/Imagens/Capturas de tela/2021-03-09 (1).png"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://localhost:5001/api/usuarios/imagem",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "5001",
+					"path": [
+						"api",
+						"usuarios",
+						"imagem"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

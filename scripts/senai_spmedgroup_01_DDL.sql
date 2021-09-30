@@ -6,19 +6,16 @@ GO
 
 --Especialidade
 
---TRUNCATE TABLE especialidade;
---DROP TABLE especialidade;
 
 CREATE TABLE especialidade(
 idEspecialidade SMALLINT PRIMARY KEY IDENTITY (1,1),
 tituloEspecialidade VARCHAR(100) UNIQUE NOT NULL
 );
 GO
+--TRUNCATE TABLE especialidade;
 
 --Clinica
 
---DROP TABLE clinica;
---TRUNCATE TABLE clinica;
 
 CREATE TABLE clinica (
 idClinica SMALLINT PRIMARY KEY IDENTITY (1,1),
@@ -28,45 +25,43 @@ cnpj CHAR(18) UNIQUE NOT NULL,
 horarioFuncionamento TIME NOT NULL
 );
 GO
+--TRUNCATE TABLE clinica;
 
 --Tipo Usuario
 
---DROP TABLE tipoUsuario;
---TRUNCATE TABLE tipoUsuario;
 
 CREATE TABLE tipoUsuario (
 idTipoUsuario SMALLINT PRIMARY KEY IDENTITY (1,1),
 tituloUsuario VARCHAR(50) NOT NULL
 );
 GO
+--TRUNCATE TABLE tipoUsuario;
 
 --Situacao
 
---DROP TABLE situacao;
---TRUNCATE TABLE situacao;
 
 CREATE TABLE situacao(
 idSituacao TINYINT PRIMARY KEY IDENTITY (1,1),
 estadoSituacao VARCHAR(50) NOT NULL
 );
 GO
+--TRUNCATE TABLE situacao;
 
 --Usuario
---DROP TABLE usuario;
---TRUNCATE TABLE usuario;
 
 CREATE TABLE usuario (
 idUsuario INT PRIMARY KEY IDENTITY (1,1),
 idTipoUsuario SMALLINT FOREIGN KEY REFERENCES tipoUsuario (idTipoUsuario) NOT NULL,
 nome VARCHAR(100) NOT NULL,
 email VARCHAR(256) UNIQUE NOT NULL,
-senha CHAR(15) NOT NULL CHECK (len(senha)>=8) 
+senha VARCHAR(15) NOT NULL CHECK (len(senha)>=8) 
 );
 GO
+--TRUNCATE TABLE usuario;
+
 
 --Medico
 
---DROP TABLE medico;
 --TRUNCATE TABLE medico;
 
 CREATE TABLE medico(
@@ -84,8 +79,6 @@ GO
 
 --prontuario
 
---TRUNCATE TABLE prontuario;
---DROP TABLE prontuario;
 
 CREATE TABLE prontuario
 (idProntuario INT PRIMARY KEY IDENTITY (1,1),
@@ -96,19 +89,51 @@ cpf CHAR(14) NOT NULL UNIQUE,
 enderecoProntuario VARCHAR(150),
 );
 GO
+--TRUNCATE TABLE prontuario;
 
 --Agendamento
 
---DROP TABLE agendamento;
---TRUNCATE TABLE agendamento;
+
+--ImagemUsuario
+CREATE TABLE imagemUsuario
+(
+	idImagem INT PRIMARY KEY IDENTITY(1,1),
+	idUsuario INT NOT NULL UNIQUE FOREIGN KEY REFERENCES usuario(idUsuario),
+	binario VARBINARY (MAX) NOT NULL,
+	mimeType VARCHAR (30) NOT NULL,
+	nomeArquivo VARCHAR(250) NOT NULL,
+	data_inclusao DATETIME DEFAULT GETDATE() NULL
+);
+GO
+
+
 
 CREATE TABLE agendamento (
 idAgendamento INT PRIMARY KEY IDENTITY (1,1),
 idMedico INT FOREIGN KEY REFERENCES medico (idMedico) NOT NULL,
 idProntuario INT FOREIGN KEY REFERENCES prontuario (idProntuario) NOT NULL,
-idSituacao TINYINT FOREIGN KEY REFERENCES situacao (idSituacao) DEFAULT (3) NOT NULL,
+idSituacao TINYINT FOREIGN KEY REFERENCES situacao (idSituacao) NOT NULL,
 descricao VARCHAR(500),
 dataConsulta DATETIME
 );
 GO
+--TRUNCATE TABLE agendamento;
 
+DROP TABLE agendamento;
+GO
+DROP TABLE imagemUsuario;
+GO
+DROP TABLE prontuario;
+GO
+DROP TABLE medico;
+GO
+DROP TABLE usuario;
+GO
+DROP TABLE situacao;
+GO
+DROP TABLE tipoUsuario;
+GO
+DROP TABLE clinica;
+GO
+DROP TABLE especialidade;
+GO
