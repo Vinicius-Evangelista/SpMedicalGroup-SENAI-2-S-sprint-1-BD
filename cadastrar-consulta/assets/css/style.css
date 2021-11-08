@@ -1,0 +1,19 @@
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+/* .ver-consultas-main-box{
+    width: 100%;
+    height: 100%;
+} */
+
+.consultas-container{
+    background-image: url(../img/fundo-imagem.png);
+    object-fit: cover;
+    width: 1638px; 
+    height:892px;
+    background-repeat: no-repeat;
+}
+
