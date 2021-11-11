@@ -1,0 +1,621 @@
+/* IMPORTS */
+
+@import url('https://fonts.googleapis.com/css2?family=Tenor+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Barlow:wght@600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Titillium+Web:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Barlow&display=swap');
+/*========== ROOT ========== */
+
+:root {
+    /* FONTS */
+    --font-log: 'Tenor Sans', sans-serif;
+    --font-titulo: 'Barlow', sans-serif;
+    --font-textos: 'Open Sans', sans-serif;
+    --font-botao: 'Titillium Web', sans-serif;
+    
+    /* PALETA DE CORES */
+    --cor1: #025B5E;
+    --cor2: #05E3EB;
+    --cor3: #03999E;
+    --cor4: #03A5AB;
+    --cor5: #038085;
+}
+
+/* CONFIGURAÇÕES GERAIS */
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+
+/* LOGIN */
+
+/* ========== HEADER ========== */
+
+.container {
+    margin: auto;
+    width: 1200px;
+}
+
+
+.box-header {
+    height: 78.66px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    height: 64px;
+}
+
+.nav-header {
+    height: 35px;
+    width: 838px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.links {
+    font-family: var(--font-titulo);
+    text-decoration: none;
+    color: black;
+    font-weight: 400;
+    text-transform: uppercase;
+}
+
+.links-entrar {
+    font-family: var(--font-titulo);
+    color: var(--cor1);
+    text-decoration: none;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.login-buttons {
+    width: 214px;
+    height: 35px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.links-login {
+    display: inline-block;
+    /* Estilização escrita */
+    font-family: var(--font-botao);
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: white;
+    /* botao */
+    width: 122px;
+    height: 35px;
+    border-radius: 10px;
+    background-color: var(--cor4);
+    /* Posição */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* ========== MAIN ========== */
+
+.separador {
+    color: rgba(0, 0, 0, 0.26);
+    height: 1px;
+}
+
+.main-box {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 10px;
+    background: rgba(228, 228, 228, 0.55);
+/* 
+    overflow-y: hidden;
+    overflow-x: hidden; */
+
+}
+
+.enfermeira-img {
+    width: 170px;
+}
+
+.form-box {
+    width: 386px;
+    height: 332px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.logo-login {
+    height: 100px;
+    width: 297px;
+}
+
+.text-logo {
+    font-family: var(--font-log);
+    font-size: 27px;
+}
+
+.login {
+    height: 118px;
+    display: flex;
+    flex-direction: column;
+}
+
+.email {
+    /* tirando configurações do browser */
+    box-shadow: none;
+    border: none;
+    outline: none;
+    /* Estilização*/
+    width: 254px;
+    background-color: rgba(228, 228, 228, 0.55);
+    border-bottom: 1.5px solid var(--cor1);
+    margin-bottom: 15px;
+    margin-top: 15px;
+}
+
+.senha {
+    /* tirando configurações do browser */
+    box-shadow: none;
+    border: none;
+    outline: none;
+    /* Estilização*/
+    width: 254px;
+    background-color: rgba(228, 228, 228, 0.55);
+    border-bottom: 1.5px solid var(--cor1);
+}
+
+.email ::placeholder {
+    font-family: var(--font-titulo);
+    font-weight: 400;
+    font-size: 19px;
+}
+
+.senha ::placeholder {
+    font-family: var(--font-titulo);
+    font-weight: 400;
+    font-size: 19px;
+}
+
+.form-button {
+    /* Botão */
+    margin-top: 15px;
+    background-color: var(--cor1);
+    border-radius: 20px;
+    height: 42px;
+    width: 247px;
+    border: none;
+    /* Texto dentro do botão */
+    font-family: var(--font-botao);
+    font-weight: 700;
+    color: white;
+    font-size: 19px;
+}
+
+.span-cadastrar {
+    font-family: var(--font-textos);
+    font-weight: 400;
+    font-size: 12px;
+}
+
+.form-box a {
+    color: var(--cor1);
+    font-family: var(--font-textos);
+    font-weight: 400;
+    text-decoration: none;
+    font-size: 12px;
+}
+
+/* ========= FOOTER ========= */
+
+.footer-container {
+    height: 89px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header-list {
+    font-family: var(--font-titulo);
+    font-size: 11px;
+    font-weight: bold;
+}
+
+.lista-links {
+    font-family: var(--font-titulo);
+    font-size: 11px;
+    font-weight: 500;
+}
+
+.box-footer-links {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 130px;
+}
+
+.links-footer a {
+    text-decoration: none;
+    color: black;
+}
+
+.lista-links::marker {
+    color: white;
+}
+
+.header-list::marker {
+    color: white;
+}
+
+.box-direitos {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.direitos {
+    font-family: var(--font-botao);
+    font-weight: bold;
+    font-size: 11px;
+}
+
+.text-logo-footer {
+    font-family: var(--font-log);
+    text-decoration: none;
+    color: black;
+    font-size: 15px;
+}
+
+/* ==================================== CONSULTA ======================================= */
+
+/* HEADER */
+
+.user-icon {
+    padding: 0px 5px;
+}
+
+/* MAIN  */
+
+.login-main-box {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    margin-top: 10px;
+    background: rgba(228, 228, 228, 0.55);
+}
+
+/* CONSULTA DADOS */
+
+.container-consultas {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.container-consultas h1 {
+    font-family: var(--font-titulo);
+    font-weight: 600;
+    font-size: 36px;
+    color: var(--cor1);
+}
+
+.consultas-box {
+    width: 481px;
+    height: 304px;
+    background-color: var(--cor5);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.5);
+    border-radius: 30px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin-bottom: 20px;
+}
+
+.titulo-tipo-medico {
+    width: 354px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin: 28px 28px;
+}
+
+.titulo-tipo-medico span {
+    font-family: var(--font-titulo);
+    color: white;
+    font-weight: bold;
+    width: 101px;
+}
+
+.consultas-separador {
+    margin: 0 6px;
+    background-color: white;
+    width: 124px;
+    height: 1px;
+}
+
+.nome-paciente {
+    display: flex;
+}
+
+.separador-dados {
+    background-color: white;
+    height: 1px;
+    margin-bottom: 26px;
+}
+
+.nome-paciente span {
+    font-family: var(--font-textos);
+    color: white;
+    font-size: 13px;
+    padding-left: 3px;
+}
+
+.nome-medico {
+    display: flex;
+}
+
+.nome-medico span {
+    font-family: var(--font-textos);
+    color: white;
+    font-size: 13px;
+    padding-left: 3px;
+}
+
+.situacao-e-data {
+    display: flex;
+    justify-content: space-between;
+    width: 397px;
+}
+
+.nome-situacao {
+    display: flex;
+    flex-direction: column;
+}
+
+.nome-situacao span {
+    font-family: var(--font-textos);
+    color: white;
+    font-size: 13px;
+    padding-left: 3px;
+}
+
+.nome-data {
+    display: flex;
+    flex-direction: column;
+}
+
+.nome-data span {
+    font-family: var(--font-textos);
+    color: white;
+    font-size: 13px;
+    padding-left: 3px;
+}
+
+.separador-situacao-data {
+    height: 1px;
+    width: 183px;
+    background-color: white;
+}
+
+.box-button {
+    display: flex;
+    flex-direction: column;
+    width: 395px;
+    align-items: center;
+}
+
+.box-button textarea {
+    width: 100%;
+    height: 55px;
+    border-radius: 10px;
+    border: 1px solid #FFFFFF;
+    background: var(--cor5);
+    margin: 12px 0;
+    resize: none;
+    padding-left: 18px;
+    padding-top: 12px;
+    padding-right: 12px;
+    font-family: var(--font-textos);
+    font-size: 12px;
+    color: white
+}
+
+.box-button textarea::-moz-placeholder {
+    color: white;
+    font-size: 9px;
+    font-family: var(--font-textos);
+}
+
+.box-button button {
+    width: 168px;
+    height: 30px;
+    border-radius: 20px;
+    border: none;
+    background-color: var(--cor1);
+    /* texto */
+    text-transform: uppercase;
+    font-family: var(--font-botao);
+    font-weight: 700;
+    color: white;
+}
+
+/* ============================ CADASTRO CONSULTAS ========================== */
+
+/* MAIN */
+.consulta-main-box {
+    display: flex;
+    background-color: #e4e4e4;
+}
+
+/* IMAGEM */
+.exame {
+    height: 370px;
+    margin-top: 80px;
+}
+
+.form-cadastro-consulta {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+    margin-left: 60px;
+}
+
+
+/* FORM */
+
+.form-cadastro-box {
+    height: 359px;
+    width: 459px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: var(--cor5);
+    border-radius: 25px;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.form-cadastro-consulta h1 {
+    font-family: var(--font-titulo);
+    font-weight: 600;
+    color: var(--cor5);
+    margin:23px 0 10px 0;
+}
+
+.cadastro-consulta-box {
+    display: flex;
+    flex-direction: column;
+}
+
+
+.input-nome-paciente{
+    width: 402px;
+    height: 27px;
+    border-radius: 19px;
+    border: 1px solid var(--cor4);
+    background-color: var(--cor5);
+    padding-left: 20px;
+    color: white;
+    margin-bottom: 14px;
+    font-family: var(--font-textos);
+}
+
+.input-nome-medico{
+    width: 402px;
+    height: 27px;
+    border-radius: 19px;
+    border: 1px solid var(--cor4);
+    background-color: var(--cor5);
+    padding-left: 20px;
+    color: white;
+    margin-bottom: 14px;
+    font-family: var(--font-textos);
+}
+
+.data-e-situacao{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 14px;
+}
+
+.cadastro-consulta-box input::placeholder {
+    font-family: var(--font-textos);
+    font-size:13px;
+    color: #FFFFFF;
+}
+
+.campo-situacao {
+    width: 182px;
+    height: 27px;
+    border-radius: 19px;
+    border: 1px solid var(--cor4);
+    background-color: var(--cor5);
+    font-family: var(--font-textos);
+    color: white;
+}
+
+.input-data{
+    width: 182px;
+    height: 27px;
+    border-radius: 19px;
+    border: 1px solid var(--cor4);
+    background-color: var(--cor5);
+    padding-left: 20px;
+    color: white;
+}
+
+.descricao-cadastro-consulta {
+
+    box-shadow: none;
+    outline: none;
+    width: 402px;
+    height: 100px;
+    resize: none;
+    border: 1px solid var(--cor4);
+    background-color: var(--cor5);
+    border-radius: 10px;
+    padding: 18px 12px;
+    font-family: var(--font-textos);
+    color: white;
+}
+
+.descricao-cadastro-consulta::-moz-placeholder{
+    color: white;
+    font-size: 13px;
+    font-family: var(--font-textos);
+}
+
+.form-cadastro-button{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 14px ;
+}
+
+.cadastro-consulta-cadastrar{
+    background-color: var(--cor1);
+    width:256px;
+    height: 47px;
+    border-radius: 20px;
+    /* texto */
+    text-transform: uppercase;
+    color: white;
+    font-family: var(--font-botao);
+    font-weight: bold;
+    border: none;
+    font-size: 23px;
+    cursor: pointer;
+
+}
+
+.cadastro-consulta-cancelar{
+    height:29px;
+    width:108px;
+    background: none;
+    border: none;
+    /* texto */
+    text-transform: uppercase;
+    color: white;
+    font-family: var(--font-botao);
+    font-weight: bold;
+    border: none;
+    font-size: 23px;
+    cursor: pointer;
+    margin-top: 11px;
+}
+
+
