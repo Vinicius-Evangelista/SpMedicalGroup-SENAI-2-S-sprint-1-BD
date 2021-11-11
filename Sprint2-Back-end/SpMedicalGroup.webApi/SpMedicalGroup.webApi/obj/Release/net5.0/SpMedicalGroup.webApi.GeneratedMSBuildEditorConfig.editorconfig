@@ -7,4 +7,4 @@ build_property.PublishSingleFile =
 build_property.IncludeAllContentForSelfExtract = 
 build_property._SupportedPlatformList = Android,iOS,Linux,macOS,Windows
 build_property.RootNamespace = SpMedicalGroup.webApi
-build_property.ProjectDir = C:\Users\Vinicius\Desktop\SpMedicalGroup-SENAI-2-S-sprint-1-BD\SpMedicalGroup.webApi\SpMedicalGroup.webApi\
+build_property.ProjectDir = C:\Users\Vinicius\Desktop\SpMedicalGroup-SENAI-2-S-sprint-1-BD\Sprint2-Back-end\SpMedicalGroup.webApi\SpMedicalGroup.webApi\
