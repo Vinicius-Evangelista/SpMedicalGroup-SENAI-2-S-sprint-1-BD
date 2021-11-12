@@ -4,10 +4,9 @@ import React from 'react';
 import logoHeader from './assets/img/SPMG-logo-header.png'
 
 //Css
-import '.../pages/index.css'
+import '../../style.css';
 
 export default function HeaderLogin() {
-
 
     return (
         <div>

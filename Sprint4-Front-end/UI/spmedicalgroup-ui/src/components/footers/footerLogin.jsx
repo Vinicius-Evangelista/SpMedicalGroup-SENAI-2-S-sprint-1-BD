@@ -1,7 +1,7 @@
 import React from 'react'
 
 //Css
-import '.../pages/index.css'
+import "../../style.css"
 
 export default function FooterLogin() {
     return (
