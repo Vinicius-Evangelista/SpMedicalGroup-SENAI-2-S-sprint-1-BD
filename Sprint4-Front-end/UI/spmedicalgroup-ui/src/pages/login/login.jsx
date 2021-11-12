@@ -16,18 +16,51 @@ import "../../style.css";
 export default function Login() {
 
     //States
-    const [senha, setSenha] = useState('');
-    const [email, setEmail] = useState('');
+    const [senha, setSenha] = useState('12345678');
+    const [email, setEmail] = useState('ligia@gmail.com');
+    const [validacao, setValidacao] = useState(false);
+    
+    function FazerLogin(event){
 
+        setValidacao(true)
+
+        //tirando função padrão da página
+        event.preventDefault();
+
+        //chamando api
+        axios.post('https://localhost:5001/api/login/login', {
+            email: email,
+            senha: senha
+        })
+
+        .then( (resposta) => {
+
+            //adicionando token no local Storage
+            if(resposta.status === 200){
+                localStorage.setItem('usuario-login', resposta.data.token);
+                setValidacao(false);
+
+                let base64 = localStorage.getItem('usuario-login').split('.')[1];         
+                
+                //exibindo o base64 do login.
+                console.log(base64);
+
+                console.log('foi');
+            }
+
+        }
+        )
+
+        .catch(erro => console.log(erro))
+    }
 
 
 
     return (
         <div>
             {/* Header */}
-            <header>
-                <HeaderLogin />
-            </header>
+
+            <HeaderLogin />
 
 
             {/* <!-- Main --> */}
@@ -35,7 +68,7 @@ export default function Login() {
                 <hr className="separador" />
 
                 <div className="main-box container">
-
+                    
 
 
                     {/* <!-- Enfermeira --> */}
@@ -49,22 +82,23 @@ export default function Login() {
 
 
                         {/* <!-- Form --> */}
-                        <form action="" className="login">
+                        <form onSubmit = {FazerLogin} action="" className="login">
 
                             {/* <!-- Email --> */}
                             <label ></label>
                             <input type="text"
 
-                                onChange={(event) => (setEmail(event.target.value))}
-
-                                placeholder="Email" className="email" />
+                                onChange={(event) => setEmail(event.target.value)}
+                                placeholder="Email" value = {email} className="email" />
 
                             {/* <!-- Senha --> */}
                             <label ></label>
-                            <input type="text" placeholder="Senha" className="senha" />
+                            <input type="text" placeholder="Senha" value = {senha} 
+                            onChange = {(event) => setSenha(event.target.value)}
+                            className="senha" />
 
                             {/* <!-- Botão --> */}
-                            <button className="form-button">Entrar</button>
+                            <button type ="submit" className="form-button">Entrar</button>
                         </form>
                         <div className="box-cadastrar">
                             <span className="span-cadastrar">Não tem uma conta?</span>
@@ -81,9 +115,8 @@ export default function Login() {
             </main>
 
             {/* Footer */}
-            <footer>
-                <FoooterLogin/>
-            </footer>
+                <FoooterLogin />
+
         </div>
     );
 }

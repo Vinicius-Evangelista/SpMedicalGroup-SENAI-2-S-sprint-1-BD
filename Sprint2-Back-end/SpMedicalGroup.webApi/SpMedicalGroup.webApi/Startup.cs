@@ -30,6 +30,19 @@ namespace SpMedicalGroup.webApi
                     options.SerializerSettings.NullValueHandling = NullValueHandling.Ignore;
                 });
 
+            //Adicionando configurações no Cors
+            services.AddCors(options =>
+            {
+                options.AddPolicy("CorsPolicy",
+                  builder =>
+                  {
+                      builder.WithOrigins("http://localhost:3000")
+                      .AllowAnyHeader()
+                      .AllowAnyMethod();
+                  }
+                    );
+            });
+
             //registrando um gerador de Sweagger, difinindo ou ou mais documentos
             services.AddSwaggerGen(c =>
             {
