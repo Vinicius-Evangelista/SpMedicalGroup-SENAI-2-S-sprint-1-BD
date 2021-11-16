@@ -70,5 +70,42 @@ namespace SpMedicalGroup.webApi.Repositotories
 
 
         }
+
+        public List<Agendamento> MedicoAgendamento(int idAgendamento, int idUsuario)
+        {
+            Medico medico = context.Medicos.FirstOrDefault(m => m.IdUsuario == idUsuario);
+
+            return context.Agendamentos
+                .Where(a => a.IdAgendamento == idAgendamento && a.IdMedico == medico.IdMedico)
+                .Select(a => new Agendamento()
+                {
+                    IdAgendamento = a.IdAgendamento,
+                    IdMedico = a.IdMedico,
+                    IdProntuario = a.IdProntuario,
+                    IdSituacao = a.IdSituacao,
+                    DataConsulta = a.DataConsulta,
+                    Descricao = a.Descricao,
+
+                    IdMedicoNavigation = new Medico()
+                    {
+                        NomeMedico = a.IdMedicoNavigation.NomeMedico
+                    },
+
+                    IdProntuarioNavigation = new Prontuario()
+                    {
+                        IdUsuarioNavigation = new Usuario()
+                        {
+                            Nome = a.IdProntuarioNavigation.IdUsuarioNavigation.Nome
+                        }
+                    },
+
+                    IdSituacaoNavigation = new Situacao()
+                    {
+                        EstadoSituacao = a.IdSituacaoNavigation.EstadoSituacao
+                    }
+                }
+                ).ToList();
+            ;
+        }
     }
 }

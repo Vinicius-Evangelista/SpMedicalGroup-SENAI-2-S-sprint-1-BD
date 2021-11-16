@@ -20,6 +20,7 @@ namespace SpMedicalGroup.webApi.Repositotories
             Prontuario prontuario = context.Prontuarios.FirstOrDefault(p => p.IdUsuario == idUsuario);
 
             return context.Agendamentos
+                
              .Select(a => new Agendamento
              {
                  IdAgendamento = a.IdAgendamento,
@@ -48,11 +49,49 @@ namespace SpMedicalGroup.webApi.Repositotories
                 }
              }
                 )
-            .Where(a => a.IdProntuario == prontuario.IdProntuario)
-            .ToList();
+             .Where(a => a.IdProntuario == prontuario.IdProntuario)
+            .ToList()
+            ;
 
 
 
+        }
+
+        public List<Agendamento> PacienteAgendamento (int idAgendamento, int idUsuario)
+        {
+            Prontuario prontuario = context.Prontuarios.FirstOrDefault(p => p.IdUsuario == idUsuario);
+
+            return context.Agendamentos
+                .Where(a => a.IdAgendamento == idAgendamento && a.IdProntuario == prontuario.IdProntuario)
+                .Select(a => new Agendamento()
+                {
+                    IdAgendamento = a.IdAgendamento,
+                    IdMedico = a.IdMedico,
+                    IdProntuario = a.IdProntuario,
+                    IdSituacao = a.IdSituacao,
+                    DataConsulta = a.DataConsulta,
+                    Descricao = a.Descricao,
+
+                    IdMedicoNavigation = new Medico()
+                    {
+                        NomeMedico = a.IdMedicoNavigation.NomeMedico
+                    },
+
+                    IdProntuarioNavigation = new Prontuario()
+                    {
+                        IdUsuarioNavigation = new Usuario()
+                        {
+                            Nome = a.IdProntuarioNavigation.IdUsuarioNavigation.Nome
+                        }
+                    },
+
+                    IdSituacaoNavigation = new Situacao()
+                    {
+                        EstadoSituacao = a.IdSituacaoNavigation.EstadoSituacao
+                    }
+                }
+                ).ToList();
+            ;
         }
     }
 }

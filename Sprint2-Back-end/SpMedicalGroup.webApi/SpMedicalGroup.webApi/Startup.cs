@@ -102,7 +102,8 @@ namespace SpMedicalGroup.webApi
                 app.UseDeveloperExceptionPage();
             }
 
-            app.UseRouting();
+
+
 
             //definindo o uso do sweagger
             app.UseSwagger();
@@ -113,6 +114,11 @@ namespace SpMedicalGroup.webApi
                 c.SwaggerEndpoint("/swagger/v1/swagger.json", "SpMedicalGroup.webApi");
                 c.RoutePrefix = string.Empty;
             });
+
+            app.UseRouting();
+
+            //definindo configuração do cors
+            app.UseCors("CorsPolicy");
 
             app.UseAuthentication();//403
 

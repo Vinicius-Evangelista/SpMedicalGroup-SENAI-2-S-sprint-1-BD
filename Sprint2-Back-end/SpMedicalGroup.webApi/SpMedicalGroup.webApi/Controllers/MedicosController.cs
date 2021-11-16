@@ -65,5 +65,24 @@ namespace SpMedicalGroup.webApi.Controllers
                 return BadRequest(excep);
             }
         }
+
+
+        [Authorize(Roles = "2")]
+        [HttpGet("listar/{idAgendamento}")]
+        public IActionResult ListarMedicoConsultas(int idAgendamento)
+        {
+
+            try
+            {
+                int idUsuario = Convert.ToInt32(HttpContext.User.Claims.First(c => c.Type == JwtRegisteredClaimNames.Jti).Value);
+
+                return Ok(_medicoRepository.MedicoAgendamento(idAgendamento, idUsuario));
+            }
+            catch (Exception excep)
+            {
+
+                return BadRequest(excep);
+            }
+        }
     }
 }

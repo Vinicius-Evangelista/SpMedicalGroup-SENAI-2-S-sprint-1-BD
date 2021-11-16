@@ -34,15 +34,16 @@ namespace SpMedicalGroup.webApi.Controllers
 
                 if (usuarioBuscado != null)
                 {
-                    
-                    
 
                     //declarando as claims
                     var minhasClaims = new[]
                     {
                         new Claim(JwtRegisteredClaimNames.Email, usuarioBuscado.Email),
                         new Claim(JwtRegisteredClaimNames.Jti, usuarioBuscado.IdUsuario.ToString()),
-                        new Claim(ClaimTypes.Role, usuarioBuscado.IdTipoUsuario.ToString())
+                        new Claim(ClaimTypes.Role, usuarioBuscado.IdTipoUsuario.ToString()),
+
+                        //definindo uma nova claim para colocar o token
+                        new Claim("role", usuarioBuscado.IdTipoUsuario.ToString())
 
                     };
 

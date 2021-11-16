@@ -17,6 +17,14 @@ namespace SpMedicalGroup.webApi.Interfaces
         /// <param name="idMedico">id do medico que será usado para validação</param>
         /// <returns>Uma lista de agendamentos</returns>
         List<Agendamento> ListarMedicoAgendamentos(int idMedico);
+
+        /// <summary>
+        /// retorna um agendamento que o medico escolheu
+        /// </summary>
+        /// <param name="idMedico"></param>
+        /// <returns>Uma lista de agendamentos</returns>
+        List<Agendamento> MedicoAgendamento(int idMedico, int idUsuario);
+
         /// <summary>
         /// Adiciona uma descricao no agendamento
         /// </summary>

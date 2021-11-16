@@ -17,6 +17,8 @@ namespace SpMedicalGroup.webApi.Interfaces
         /// <param name="idPaciente">id do paciente usado validação</param>
         /// <returns>uma lista de paciente</returns>
         List<Agendamento> ListarPacienteAgendamentos(int idPaciente);
+        List <Agendamento> PacienteAgendamento(int idAgendamento, int idProntuario);
+
 
     }
 }

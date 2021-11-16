@@ -16,6 +16,13 @@
             <param name="idMedico">id do medico que será usado para validação</param>
             <returns>Uma lista de agendamentos</returns>
         </member>
+        <member name="M:SpMedicalGroup.webApi.Interfaces.IMedicoRepository.MedicoAgendamento(System.Int32,System.Int32)">
+            <summary>
+            retorna um agendamento que o medico escolheu
+            </summary>
+            <param name="idMedico"></param>
+            <returns>Uma lista de agendamentos</returns>
+        </member>
         <member name="M:SpMedicalGroup.webApi.Interfaces.IMedicoRepository.AdicionarDescricao(System.Int32,SpMedicalGroup.webApi.Domains.Agendamento)">
             <summary>
             Adiciona uma descricao no agendamento

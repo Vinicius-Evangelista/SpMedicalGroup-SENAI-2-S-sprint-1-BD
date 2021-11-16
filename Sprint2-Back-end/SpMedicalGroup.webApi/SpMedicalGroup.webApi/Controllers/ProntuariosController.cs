@@ -50,6 +50,32 @@ namespace SpMedicalGroup.webApi.Controllers
                     );
             }
         }
-    
+
+        [Authorize(Roles = "1")]
+        [HttpGet("listar/{idAgendamento}")]
+        public IActionResult BuscarConsultaPaciente(int idAgendamento)
+        {
+            try
+            {
+                int idUsuario = Convert.ToInt32(HttpContext.User.Claims.First(c => c.Type == JwtRegisteredClaimNames.Jti).Value);
+
+                //retorna lista do paciente que contem o id passado pela url
+                return Ok(_prontuarioRepository.PacienteAgendamento(idAgendamento ,idUsuario));
+
+            }
+            catch (Exception excep)
+            {
+                //caso não dê certo
+                return BadRequest(
+                    new
+                    {
+                        mensagem = "id do paciente é obrigatório !",
+                        erro = excep
+
+                    }
+                    );
+            }
+        }
+
     }
 }
