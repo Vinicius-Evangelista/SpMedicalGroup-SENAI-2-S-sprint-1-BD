@@ -1,12 +1,12 @@
 //Hooks
-import { useEffect, useState } from 'react';
-import { useNavigate, useParams } from "react-router-dom";
+import {  useState } from 'react';
+import { useNavigate} from "react-router-dom";
 
 //Bibliotecas React
 import axios from 'axios';
 
 //Serviços
-import { parseJwt, usuarioAutenticado } from '../../services/auth';
+import { parseJwt } from '../../services/auth';
 
 //Components
 import HeaderLogin from '../../components/headers/headerLogin';
@@ -22,8 +22,8 @@ import "../../style.css";
 export default function Login() {
 
     //States
-    const [email, setEmail] = useState('vini.evagelista@live.com');
-    const [senha, setSenha] = useState('12345678');
+    const [email, setEmail] = useState('vini.evangelista@live.com');
+    const [senha, setSenha] = useState('admin123');
     const [validacao, setValidacao] = useState(false);
     var navigate = useNavigate();    
 
@@ -49,6 +49,7 @@ export default function Login() {
                 localStorage.setItem('usuario-login', resposta.data.token);
                 setValidacao(false);
 
+                console.log(parseJwt().role);
                 
 
                 // Redirecionamento conforme o tipo do usuário.

@@ -35,7 +35,6 @@ export default function MinhasConsultas() {
                 if (resposta.status === 200) {
                     //atribuindo ao state
                     setlistaConsultas(resposta.data)
-                    {console.log(listaConsultas)}
                 }
 
             }
