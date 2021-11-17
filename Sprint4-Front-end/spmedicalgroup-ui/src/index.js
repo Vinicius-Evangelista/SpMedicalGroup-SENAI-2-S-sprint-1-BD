@@ -24,7 +24,7 @@ import MinhasConsultas from './pages/minhasconsultas/minhasConsultas';
 import MinhasConsultasMedico from './pages/minhasconsultasmedico/minhasConsultaMedico';
 import VerMinhasConsulta from './pages/vercosultapaciente/verConsultaPaciente';
 import AdicionarDescricao from './pages/adicionardescricao/adicionardescricao.jsx';
-
+import CadastrarUsuario from './pages/cadastrarusuario/cadastrarUsuario';
 
 import reportWebVitals from './reportWebVitals';
 
@@ -65,6 +65,7 @@ const routing = (
         <Route path="verminhasconsultas/:id" element={<PermissaoPaciente><VerMinhasConsulta/></PermissaoPaciente>}/>
         <Route path="adicionardescricao/:id" element={<PermissaoMedico><AdicionarDescricao/></PermissaoMedico>}/>
         <Route path="minhasconsultasmedico" element={<PermissaoMedico><MinhasConsultasMedico/></PermissaoMedico>} />
+        <Route path="cadastrarusuario" element={<PermissaoAdm><CadastrarUsuario/></PermissaoAdm>} />
         <Route path="cadastrarconsultas" element={<PermissaoAdm>
           <CadastrarConsulta />
           </PermissaoAdm>} />

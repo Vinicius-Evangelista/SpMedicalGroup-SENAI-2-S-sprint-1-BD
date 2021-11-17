@@ -687,3 +687,22 @@ main{
     text-decoration: none;
     margin-right: 21px;
 }
+
+
+/* ======== RESPONSIVO (768) ========= */
+@media (max-width: 768px){
+    /* Headers */
+    
+
+    /* Footers */
+    
+    /* Ver consultas paciente */
+    
+    .exame {
+        display: none;
+    }
+
+    .consulta-main-box{
+        justify-content: center;
+    }
+}

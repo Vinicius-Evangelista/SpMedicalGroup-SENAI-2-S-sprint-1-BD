@@ -22,8 +22,8 @@ import "../../style.css";
 export default function Login() {
 
     //States
-    const [email, setEmail] = useState('ricardo.lemos@spmedicalgroup.com.br');
-    const [senha, setSenha] = useState('12345678');
+    const [email, setEmail] = useState('vini.evagelista@live.com');
+    const [senha, setSenha] = useState('admin123');
     const [validacao, setValidacao] = useState(false);
     var navigate = useNavigate();    
 

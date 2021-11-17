@@ -20,7 +20,6 @@ export default function CadastrarConsulta() {
     const [idProntuario, setIdPaciente] = useState(0);
     const [idMedico, setIdMedico] = useState(0);
     const [Loading, setLoading] = useState(false);
-
     //Listas
     const [listaMedicos, setListasMedico] = useState([]);
     const [listaPacientes, setListaPacientes] = useState([]);
@@ -130,6 +129,7 @@ export default function CadastrarConsulta() {
                                         value={idProntuario}
                                         className="input-nome-paciente"
                                         onChange={(event) => setIdPaciente(event.target.value)}
+                                        required
                                     >
                                         <option value="0">Selecione o nome do paciente</option>
 
@@ -174,7 +174,9 @@ export default function CadastrarConsulta() {
                                             <select name="idSituacao" 
                                             value = {idSituacao}
                                             onChange = {event => setSituacao(event.target.value)}
-                                            className="campo-situacao">
+                                            className="campo-situacao"
+                                            required
+                                            >
                                                 <option value="0">Situacao</option>
                                                 <option value="1">Realizada</option>
                                                 <option value="2">Cancelada</option>
@@ -185,6 +187,7 @@ export default function CadastrarConsulta() {
                                             name = "dataConsuta"
                                             value = {dataConsulta}
                                             onChange = {(event) => setDataConsuta(event.target.value)}
+                                            required
                                             />
                                          </div>
                                         <textarea name="descricao" id="" cols="30" rows="10" className="descricao-cadastro-consulta" value = "A descrição será colocada pelo médico." disabled/>

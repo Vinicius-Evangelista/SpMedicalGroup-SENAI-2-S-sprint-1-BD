@@ -32,7 +32,7 @@ namespace SpMedicalGroup.webApi.Contexts
         {
             if (!optionsBuilder.IsConfigured)
             {
-                optionsBuilder.UseSqlServer(@"Data Source= NOTE0113F2\SQLEXPRESS; initial catalog=Sp_medical_group_tarde; user Id=sa; pwd=Senai@132;");
+                optionsBuilder.UseSqlServer(@"Data Source= DESKTOP-DHSRSVI\SQLEXPRESS; initial catalog=Sp_medical_group; user Id=sa; pwd=senai@132;");
             }
         }
 

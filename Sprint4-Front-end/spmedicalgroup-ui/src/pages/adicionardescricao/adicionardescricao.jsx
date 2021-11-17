@@ -14,7 +14,7 @@ import medica from './assets/img/medica.png'
 import "../../style.css";
 import axios from "axios";
 
-export default function VerMinhasConsulta() {
+export default function CadastrarUsuario() {
 
     //pegando o id da url
     const { id } = useParams();
