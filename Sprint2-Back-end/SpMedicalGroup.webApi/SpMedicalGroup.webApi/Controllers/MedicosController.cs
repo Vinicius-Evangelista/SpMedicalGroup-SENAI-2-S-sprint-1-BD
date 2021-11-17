@@ -31,7 +31,7 @@ namespace SpMedicalGroup.webApi.Controllers
 
         //TESTADO
         [Authorize(Roles = "2")]
-        [HttpPatch("{id}")]
+        [HttpPatch("{idAgendamento}")]
         public IActionResult AdicionarDescricao(int idAgendamento, Agendamento agendamentoDescrição)
         {
             try

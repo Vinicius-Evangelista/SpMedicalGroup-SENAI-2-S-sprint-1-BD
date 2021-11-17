@@ -19,8 +19,7 @@ export default function VerMinhasConsulta() {
     //pegando o id da url
     const { id } = useParams();
     const [ConsultasMedico, setConsultaMedico] = useState([]);
-
-
+    const [descricao, setDescricao] = useState('');
 
     function BuscarConsultasMedico() {
 
@@ -36,7 +35,7 @@ export default function VerMinhasConsulta() {
                 if (resposta.status === 200) {
                     //atribuindo ao state
                     setConsultaMedico(resposta.data);
-                    
+                    setDescricao(resposta.data[0].descricao);
                 }
 
             })
@@ -44,6 +43,27 @@ export default function VerMinhasConsulta() {
             .catch(erro => console.log(erro))
 
 
+    }
+
+    function AtualizarDescricao(event){
+
+        console.log(id)
+        event.preventDefault();
+
+        axios.patch('https://localhost:5001/api/medicos/' + id, { descricao : descricao}, {
+            headers : {
+                'Authorization' : 'Bearer ' + localStorage.getItem('usuario-login')
+            }
+        })
+
+        .then(resposta => {
+            if(resposta.status === 201)
+            {
+                console.log('foi');
+            }
+        })
+
+        .catch( erro => console.log(erro))
     }
 
     useEffect(BuscarConsultasMedico, []);
@@ -73,7 +93,7 @@ export default function VerMinhasConsulta() {
 
                         {ConsultasMedico.map((consulta) => {
                             return (
-                                <div key = {consulta.idAgendamento} className="consultas-box">
+                                <div key={consulta.idAgendamento} className="consultas-box">
                                     <div className="titulo-tipo-medico">
                                         <div className="consultas-separador"></div>
                                         <span>Clínicos Geral</span>
@@ -116,9 +136,9 @@ export default function VerMinhasConsulta() {
                                                 <div className="situacao-e-data-box">
                                                     <span>Horario:</span>
                                                     <span className="data">{Intl.DateTimeFormat("pt-BR", {
-                                                    year: 'numeric', month: 'numeric', day: 'numeric',
-                                                    hour: 'numeric', minute: 'numeric', hour12: true
-                                                }).format(new Date(consulta.dataConsulta)).split(' ')[1]}h</span>
+                                                        year: 'numeric', month: 'numeric', day: 'numeric',
+                                                        hour: 'numeric', minute: 'numeric', hour12: true
+                                                    }).format(new Date(consulta.dataConsulta)).split(' ')[1]}h</span>
                                                 </div>
                                                 <div className="separador-situacao-data"></div>
                                             </div>
@@ -128,9 +148,9 @@ export default function VerMinhasConsulta() {
                                                 <div className="situacao-e-data-box">
                                                     <span>Data:</span>
                                                     <span className="data">{Intl.DateTimeFormat("pt-BR", {
-                                                    year: 'numeric', month: 'numeric', day: 'numeric',
-                                                    hour: 'numeric', minute: 'numeric', hour12: true
-                                                }).format(new Date(consulta.dataConsulta)).split(' ')[0]}</span>
+                                                        year: 'numeric', month: 'numeric', day: 'numeric',
+                                                        hour: 'numeric', minute: 'numeric', hour12: true
+                                                    }).format(new Date(consulta.dataConsulta)).split(' ')[0]}</span>
                                                 </div>
                                                 <div className="separador-situacao-data"></div>
                                             </div>
@@ -138,9 +158,9 @@ export default function VerMinhasConsulta() {
                                     </div>
 
                                     {/* <!-- DESCRIÇÃO --> */}
-                                    <form action="">
+                                    <form onSubmit = {AtualizarDescricao}>
                                         <div className="box-button">
-                                            <textarea name="" id="" cols="30" rows="10" placeholder="Coloque a descrição..."></textarea>
+                                            <textarea name="" id="" cols="30" rows="10" placeholder="Coloque a descrição..." value = {descricao} onChange = {event => setDescricao(event.target.value)}></textarea>
                                             <button type="submit">atualizar</button>
                                         </div>
                                     </form>

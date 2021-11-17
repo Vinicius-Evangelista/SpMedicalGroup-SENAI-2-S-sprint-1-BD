@@ -15,113 +15,91 @@ import axios from "axios";
 export default function CadastrarConsulta() {
 
     //States
-    const[descricao, setDescricao] = useState('');
-    const[dataConsulta, setDataEvento] = useState(new Date());
-    const[idSituacao, setSituacao] = useState(0);
-    const[idProntuario, setIdPaciente] = useState(0);
-    const[idMedico, setIdMedico] = useState(0);
-    const[Loading, setLoading] = useState(false);
+    const [dataConsulta, setDataConsuta] = useState(new Date());
+    const [idSituacao, setSituacao] = useState(0);
+    const [idProntuario, setIdPaciente] = useState(0);
+    const [idMedico, setIdMedico] = useState(0);
+    const [Loading, setLoading] = useState(false);
 
     //Listas
-    const[listaMedicos, setListasMedico] = useState([]);
-    const[listaPacientes, setListaPacientes] = useState([]);
-    const[listaSitucao, setListaSituacao] = useState([]);
+    const [listaMedicos, setListasMedico] = useState([]);
+    const [listaPacientes, setListaPacientes] = useState([]);
 
 
 
     //Buscar medicos
-    function buscarMedicos(){
+    function buscarMedicos() {
         axios.get('https://localhost:5001/api/usuarios/listar/medicos', {
             headers: {
-                Authorization : 'Bearer ' + localStorage.getItem('usuario-login')            }
-        })
-
-        .then((resposta) => {
-            if(resposta.status === 200){
-                setListasMedico(resposta.data)
-                console.log(resposta.data)
+                Authorization: 'Bearer ' + localStorage.getItem('usuario-login')
             }
         })
 
-        .then(erro => console.log(erro))
+            .then((resposta) => {
+                if (resposta.status === 200) {
+                    setListasMedico(resposta.data)
+                }
+            })
+
+            .then(erro => console.log(erro))
     }
 
 
     //buscar pacientes
-    function buscarPacientes(){
+    function buscarPacientes() {
         axios('https://localhost:5001/api/usuarios/listar/pacientes', {
             headers: {
-                Authorization : 'Bearer ' + localStorage.getItem('usuario-login')            }
-        })
-
-        .then((resposta) => {
-            if(resposta.status === 200){
-                setListaPacientes(resposta.data)
-                console.log(resposta.data)
+                Authorization: 'Bearer ' + localStorage.getItem('usuario-login')
             }
         })
 
-        .then(erro => console.log(erro))
+            .then((resposta) => {
+                if (resposta.status === 200) {
+                    setListaPacientes(resposta.data)
+
+                }
+            })
+
+            .then(erro => console.log(erro))
     }
-    
-
-    //buscar Clinica
-    function buscarSituacao(){
-        axios.get('https://localhost:5001/api/usuarios/listar/medicos', {
-            headers: {
-                Authorization : 'Bearer ' + localStorage.getItem('usuario-login')            }
-        })
-
-        .then((resposta) => {
-            if(resposta.status === 200){
-                setListaSituacao(resposta.data)
-                console.log(resposta.data)
-            }
-        })
-
-        .then(erro => console.log(erro))
-    }
-
 
     //Cadastrar consulta
-    function CadastrarConsulta(event){
+    function FazerAgendamento(event) {
+        event.preventDefault();
 
-        event.PreventDefault();
         setLoading(true)
 
         let consulta = {
-            idMedico : idMedico,
-            idProntuario : idProntuario,
-            idSituacao : idSituacao,
-            descricao : descricao,
-            dataConsulta : dataConsulta
+            idMedico: idMedico,
+            idProntuario: idProntuario,
+            idSituacao: idSituacao,
+            dataConsulta: new Date(dataConsulta)
         }
 
         axios.post('https://localhost:5001/api/usuarios/admin', consulta, {
 
-        headers: {
-            Authorization : 'Bearer ' + localStorage.getItem('usuario-login')
-        }
-        })
-
-        .then((resposta) => {
-            if(resposta.status === 200){
-                setLoading(false)
-                console.log('consulta cadastrada')
+            headers: {
+                Authorization: 'Bearer ' + localStorage.getItem('usuario-login')
             }
-            
         })
 
-        .then(erro => console.log(erro))
+            .then((resposta) => {
+                if (resposta.status === 201) {
+                    setLoading(false)
+                    console.log('consulta cadastrada')
+                }
+
+            })
+
+            .then(erro => console.log(erro))
     }
 
     //Ciclos de vida
-    useEffect(buscarPacientes,[]);
-    useEffect(buscarSituacao,[]);
-    useEffect(buscarMedicos,[]);
+    useEffect(buscarPacientes, []);
+    useEffect(buscarMedicos, []);
 
     return (
-        
+
         <div>
             {/* Header */}
             <HeaderLogado />
@@ -139,59 +117,93 @@ export default function CadastrarConsulta() {
                     <div className="form-cadastro-consulta">
                         <h1>Cadastro de Consultas</h1>
                         <div className="form-cadastro-box">
-                            <form onSubmit = {CadastrarConsulta}>
+                            <form onSubmit={FazerAgendamento}>
                                 <div className="cadastro-consulta-box">
 
                                     {/* select para ver todos o pacientes possíveis pegando com um select */}
-                                    
-                                    {/* Pacientes */}
 
+                                    {/* Cadastrar selecionar o prontuario */}
+
+                                    {/* Quando nós clicarmos no select ele vai exibir todas opções (options) */}
                                     <select
-                                    name = "idProntuario"
-                                    value = {listaPacientes.idProntuario}
-                                    className="input-nome-paciente" 
-                                    placeholder="Nome Paciente" 
-                                    onChange = {(event) => setIdPaciente( event.target.value)} 
-                                    />
-                                        <option value = "0">Selecione o tema do evento.</option>
+                                        name="idProntuario"
+                                        value={idProntuario}
+                                        className="input-nome-paciente"
+                                        onChange={(event) => setIdPaciente(event.target.value)}
+                                    >
+                                        <option value="0">Selecione o nome do paciente</option>
 
                                         {listaPacientes.map((paciente) => {
-                                            
+                                            return (
 
-                                            return(
-                                                        
-                                                <option key = {paciente.idPaciente} value= {paciente.idPaciente}>
-                                                    {listaPacientes.idUsuarioNavigation.nome}
+                                                <option key = {paciente.idProntuario} value={paciente.idProntuario}>
+                                                    {paciente.idUsuarioNavigation.nome}
                                                 </option>
                                             );
                                         })}
-                                    <select/>
+                                        
+                                    </select>
 
-                                    <input type="text" className="input-nome-medico" placeholder="Nome do médico" />
 
-                                    <div className="data-e-situacao">
-                                        <select name="" id="" className="campo-situacao">
-                                            <option value="0">Situacao</option>
+                                        {/* Select médicos */}
+                                        <select 
+                                        name = "idMedico"
+                                        value = {idMedico}
+                                        className="input-nome-medico"
+                                        onChange = {event => setIdMedico(event.target.value)}
+                                        required
+                                        >
+
+                                        <option value = "0">Selecione o médico</option>
+
+                                        {listaMedicos.map((medico) => {
+                                            return(
+                                                
+                                                <option key = {medico.idMedico} value = {medico.idMedico}>
+                                                    {medico.nomeMedico}
+                                                </option>
+                                            );
+                                        })}
                                         </select>
-                                        <input className="input-data" type="datetime-local" />
+                                      
+
+                                        <div className="data-e-situacao">
+                                           
+                                           {/* Select Situacao */}
+
+                                            <select name="idSituacao" 
+                                            value = {idSituacao}
+                                            onChange = {event => setSituacao(event.target.value)}
+                                            className="campo-situacao">
+                                                <option value="0">Situacao</option>
+                                                <option value="1">Realizada</option>
+                                                <option value="2">Cancelada</option>
+                                                <option value="3">Agendada</option>
+                                            </select>
+                                            <input className="input-data" type="datetime-local" 
+                                            
+                                            name = "dataConsuta"
+                                            value = {dataConsulta}
+                                            onChange = {(event) => setDataConsuta(event.target.value)}
+                                            />
+                                         </div>
+                                        <textarea name="descricao" id="" cols="30" rows="10" className="descricao-cadastro-consulta" value = "A descrição será colocada pelo médico." disabled/>
+                                </div>
+                                    <div className="form-cadastro-button">
+                                        <button type = "submit" className="cadastro-consulta-cadastrar">cadastrar</button> 
+                                        <button  className = "cadastro-consulta-cancelar">cancelar</button>
                                     </div>
-                                    <textarea name="" id="" cols="30" rows="10" className="descricao-cadastro-consulta" placeholder="Coloque a descrição..."></textarea>
-                                </div>
-                                <div className="form-cadastro-button">
-                                    <button className="cadastro-consulta-cadastrar">cadastrar</button>
-                                    <button className="cadastro-consulta-cancelar">cancelar</button>
-                                </div>
                             </form>
                         </div>
+                        </div>
                     </div>
-                </div>
             </main>
 
-            {/* Footer */}
-            <FooterLogado/>
+                {/* Footer */}
+                <FooterLogado />
         </div>
 
 
-    );
+            );
 
 }

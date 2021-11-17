@@ -543,6 +543,7 @@ main{
     background-color: var(--cor5);
     font-family: var(--font-textos);
     color: white;
+    padding-left: 16px;
 }
 
 .input-data{

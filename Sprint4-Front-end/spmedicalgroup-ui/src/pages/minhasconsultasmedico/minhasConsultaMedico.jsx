@@ -43,6 +43,7 @@ export default function MinhasConsultasMedico() {
             .catch(erro => console.log(erro))
     }
 
+
     //Hook Ciclo de vida : Efeito, causa
     useEffect(BuscarMinhasConsutas, []);
 
