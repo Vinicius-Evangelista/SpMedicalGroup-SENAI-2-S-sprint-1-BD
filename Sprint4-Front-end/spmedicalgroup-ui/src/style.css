@@ -13,7 +13,7 @@
     --font-titulo: 'Barlow', sans-serif;
     --font-textos: 'Open Sans', sans-serif;
     --font-botao: 'Titillium Web', sans-serif;
-    
+
     /* PALETA DE CORES */
     --cor1: #025B5E;
     --cor2: #05E3EB;
@@ -30,7 +30,7 @@
     box-sizing: border-box;
 }
 
-main{
+main {
     background: rgba(228, 228, 228, 0.55);
 }
 
@@ -244,6 +244,15 @@ main{
 }
 
 .links-footer a {
+    text-decoration: none;
+    color: black;
+}
+
+.links-footer-logado {
+    margin-left: 20px;
+}
+
+.links-footer-logado a {
     text-decoration: none;
     color: black;
 }
@@ -489,7 +498,7 @@ main{
     font-family: var(--font-titulo);
     font-weight: 600;
     color: var(--cor5);
-    margin:23px 0 10px 0;
+    margin: 23px 0 10px 0;
 }
 
 .cadastro-consulta-box {
@@ -498,7 +507,7 @@ main{
 }
 
 
-.input-nome-paciente{
+.input-nome-paciente {
     width: 402px;
     height: 27px;
     border-radius: 19px;
@@ -510,7 +519,7 @@ main{
     font-family: var(--font-textos);
 }
 
-.input-nome-medico{
+.input-nome-medico {
     width: 402px;
     height: 27px;
     border-radius: 19px;
@@ -522,7 +531,7 @@ main{
     font-family: var(--font-textos);
 }
 
-.data-e-situacao{
+.data-e-situacao {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -531,7 +540,7 @@ main{
 
 .cadastro-consulta-box input::placeholder {
     font-family: var(--font-textos);
-    font-size:13px;
+    font-size: 13px;
     color: #FFFFFF;
 }
 
@@ -546,7 +555,7 @@ main{
     padding-left: 16px;
 }
 
-.input-data{
+.input-data {
     width: 182px;
     height: 27px;
     border-radius: 19px;
@@ -571,22 +580,22 @@ main{
     color: white;
 }
 
-.descricao-cadastro-consulta::-moz-placeholder{
+.descricao-cadastro-consulta::-moz-placeholder {
     color: white;
     font-size: 13px;
     font-family: var(--font-textos);
 }
 
-.form-cadastro-button{
+.form-cadastro-button {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top: 14px ;
+    margin-top: 14px;
 }
 
-.cadastro-consulta-cadastrar{
+.cadastro-consulta-cadastrar {
     background-color: var(--cor1);
-    width:256px;
+    width: 256px;
     height: 47px;
     border-radius: 20px;
     /* texto */
@@ -600,9 +609,9 @@ main{
 
 }
 
-.cadastro-consulta-cancelar{
-    height:29px;
-    width:108px;
+.cadastro-consulta-cancelar {
+    height: 29px;
+    width: 108px;
     background: none;
     border: none;
     /* texto */
@@ -618,20 +627,20 @@ main{
 
 
 /* ============================= Ver Consultas ======================================== */
-.ver-consultas-main-box{
+.ver-consultas-main-box {
     background-image: url(../src/pages/minhasconsultas/assets/img/fundo-imagem.png);
     background-repeat: no-repeat;
     width: 100vw;
     height: 100vh;
 }
 
-.consultas-container{
+.consultas-container {
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.box-consultas{
+.box-consultas {
     background-color: #038085;
     width: 858px;
     height: 687px;
@@ -643,66 +652,176 @@ main{
     flex-direction: column;
 }
 
-.box-consultas h1{
+.box-consultas h1 {
     font-family: 'Barlow', sans-serif;
     color: white;
     font-size: 29px;
     font-weight: 600;
 }
 
-.consulta{
+.consulta {
     background-color: #03A5AB;
     width: 737px;
     height: 89px;
     border-radius: 10px;
     /* conteúdo */
     display: flex;
-  justify-content: space-evenly;
-  flex-direction: column;
+    justify-content: space-evenly;
+    flex-direction: column;
 
 }
 
-.tipo-medico{
+.tipo-medico {
     font-family: 'Barlow', sans-serif;
     font-weight: 600;
     font-size: 18px;
-     color:white;
-     padding-left: 13px;
+    color: white;
+    padding-left: 13px;
 }
 
-.box-dados-consulta{
+.box-dados-consulta {
     display: flex;
     justify-content: space-between;
 }
 
-.consulta-dados span{
+.consulta-dados span {
     font-family: 'Barlow', sans-serif;
     color: white;
-    margin:  0 13px  0 13px;
+    margin: 0 13px 0 13px;
 }
 
-.consulta a{
+.consulta a {
     font-family: 'Barlow', sans-serif;
     color: white;
     text-decoration: none;
     margin-right: 21px;
+    align-content: center;
+    display: flex;
+    justify-content: center;
+    background: #025B5E;
+    width: 154.96px;
+    border-radius: 10px;
+    padding: 10px;
+    font-weight: 600;
 }
 
 
-/* ======== RESPONSIVO (768) ========= */
-@media (max-width: 768px){
+/* ======== RESPONSIVO (768px) ========= */
+@media (max-width: 768px) {
+
+    .container {
+        width: 680px;
+    }
+
     /* Headers */
-    
+    .links {
+        font-size: 12px;
+    }
+
+    .links-entrar {
+        font-size: 13px;
+        margin-right: 10px;
+    }
+
+    .login-buttons {
+        width: 140px;
+        margin-left: 50px;
+    }
+
+    .links-login {
+        font-size: 13px;
+    }
 
     /* Footers */
-    
-    /* Ver consultas paciente */
-    
+
+    .box-footer-links {
+        width: auto;
+    }
+
+    /* JÁ ESTÁ RESPONSIVO */
+
+    /* Cadastrar Consultas */
     .exame {
         display: none;
     }
 
-    .consulta-main-box{
+    .consulta-main-box {
         justify-content: center;
+    }
+
+
+    /* Adicionar Descrição */
+    /* JÁ ESTÁ RESPONSIVO */
+
+    /* Cadastrar usuario */
+    /* JÁ RESPONSIVO */
+
+    /* Login */
+    .medico-img {
+        display: none;
+    }
+
+    .main-box {
+        justify-content: center;
+    }
+
+    .form-box {
+        margin: 10px 0 10px 0;
+        justify-content: space-evenly;
+    }
+
+    .logo-login {
+        height: 45px;
+        width: 194px;
+    }
+
+    .logo-login img {
+        height: 113px;
+    }
+
+    .text-logo {
+        font-size: 23px
+    }
+
+    /* Minhas consultas */
+    .ver-consultas-main-box {
+        align-items: center;
+        display: flex;
+    }
+
+    .box-consultas {
+        height: 420px;
+        width: 680px;
+        overflow-y: scroll;
+    }
+
+    .box-consultas h1 {
+        font-size: 27px;
+        margin: 10px;
+    }
+
+    .consulta {
+        width: 557px;
+        margin: 6px 0 30px 0;
+    }
+
+    .tipo-medico {
+        font-size: 14px;
+    }
+
+    .consulta-dados span {
+        font-size: 14px;
+    }
+
+    .consulta a {
+        width: 103.96px;
+        height: 23.83px;
+        align-content: center;
+        display: flex;
+        justify-content: center;
+        background: #025B5E;
+        border-radius: 10px;
+        font-weight: 600;
+        padding: 0;
     }
 }

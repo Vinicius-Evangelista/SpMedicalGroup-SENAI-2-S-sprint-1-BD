@@ -16,9 +16,9 @@ export default function FooterLogin() {
                         <ul className="links-footer">
 
                             <li className="header-list">Central de atendimento</li>
-                            <li className="lista-links"><a href="">Política de privacidade</a></li>
-                            <li className="lista-links"><a href="">Termo de uso</a></li>
-                            <li className="lista-links"><a href="">Ajuda</a></li>
+                            <li className="lista-links"><a href="#">Política de privacidade</a></li>
+                            <li className="lista-links"><a href="#">Termo de uso</a></li>
+                            <li className="lista-links"><a href="#">Ajuda</a></li>
                         </ul>
                     </div>
 
@@ -32,8 +32,8 @@ export default function FooterLogin() {
                     <div className="box-footer-links">
                         <ul className="links-footer">
                             <li className="header-list">Páginas</li>
-                            <li className="lista-links"><a href="">Meu Perfil</a></li>
-                            <li className="lista-links"><a href="">Início</a></li>
+                            <li className="lista-links"><a href="#">Meu Perfil</a></li>
+                            <li className="lista-links"><a href="#">Início</a></li>
                         </ul>
 
                     </div>

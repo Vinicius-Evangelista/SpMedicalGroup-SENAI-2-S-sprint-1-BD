@@ -38,7 +38,7 @@ export default function footerLogado(){
                            
                         </ul>
         
-                        <ul className="links-footer">
+                        <ul className="links-footer-logado">
                             <li className="lista-links"><a href="#">Serviços</a></li>
                             <li className="lista-links"><a href="#">Sobre nós</a></li>
                         </ul>
