@@ -1,4 +1,4 @@
-USE Sp_medical_group;
+USE Sp_medical_group_tarde;
 GO
 
 --feito duas coisas exigidas do DQL

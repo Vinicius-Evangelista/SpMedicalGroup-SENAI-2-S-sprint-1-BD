@@ -1,4 +1,4 @@
-USE Sp_medical_group;
+USE Sp_medical_group_tarde;
 GO
 
 --tipoUsuario
@@ -85,12 +85,12 @@ GO
 --agendamento
 
 INSERT INTO agendamento (idMedico,idProntuario,idSituacao, descricao,dataConsulta)
-VALUES (3,7,1,'Febre','2020-01-20 15:00'),
-       (2,2,2,'Gripe','2020-06-01 10:00'),
-	   (2,3,1,'Dor na coluna','2020-07-02 11:00'),
-	   (2,2,1,'Bem','2018-06-02 10:00'),
-	   (1,4,2,'Dor de garganta','2019-07-02 11:00'),
-	   (3,7,3,'Bem','2020-08-03 15:00'),
-	   (1,4,3,'Bem','2020-09-03 11:00');
+VALUES (3,7,1,'Febre','01-02-2020 15:00'),
+       (2,2,2,'Gripe','06-01-2020 10:00'),
+	   (2,3,1,'Dor na coluna','07-02-2020 11:00'),
+	   (2,2,1,'Bem','06-02-2018 10:00'),
+	   (1,4,2,'Dor de garganta','07-02-2019 11:00'),
+	   (3,7,3,'Bem','08-03-2020 15:00'),
+	   (1,4,3,'Bem','09-03-2020 11:00');
 GO
 

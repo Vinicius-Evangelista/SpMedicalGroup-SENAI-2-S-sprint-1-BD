@@ -1,7 +1,7 @@
-CREATE DATABASE Sp_medical_group;
+CREATE DATABASE Sp_medical_group_tarde;
 GO
 
-USE Sp_medical_group;
+USE Sp_medical_group_tarde;
 GO
 
 --Especialidade
@@ -62,7 +62,6 @@ GO
 
 --Medico
 
---TRUNCATE TABLE medico;
 
 CREATE TABLE medico(
 idMedico INT PRIMARY KEY IDENTITY (1,1),
@@ -73,6 +72,7 @@ crm VARCHAR(7) NOT NULL UNIQUE,
 nomeMedico VARCHAR(100) NOT NULL
 );
 GO
+--TRUNCATE TABLE medico;
 
 --ALTER TABLE medico
 --ADD nomeMedico VARCHAR(100) NOT NULL;
