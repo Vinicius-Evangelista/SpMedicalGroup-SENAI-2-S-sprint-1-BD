@@ -21,10 +21,11 @@ export default function Login() {
     //States
     const [email, setEmail] = useState('ricardo.lemos@spmedicalgroup.com.br');
     const [senha, setSenha] = useState('12345678');
-
+    
         async function Logar () {
             //Requisição 
-          const resposta = await api.post('/Login/login', {
+         try {
+            const resposta = await api.post('/Login/login', {
                 email: email,
                 senha: senha
             })
@@ -33,21 +34,20 @@ export default function Login() {
 
             await AsyncStorage.setItem('userToken', token);
 
-            const userRole = jwtDecode(token).role;
 
             if (resposta.status === 200) {
-                if(userRole === 2){
-                    navigation.navigate("Main")
+                if(jwtDecode(token).role == 2 ){
+                    navigation.navigate("VerConsulta")
                 }
-                else if(userRole === 1){
-                    navigation.navigate("Main")
+                else if(jwtDecode(token).role == 1){
+                    navigation.navigate("VerConsulta")
                 } else {
                     Alert.alert('403');
                 }
             }
-
-            
-        
+         } catch (error) {
+             console.warn(error)
+         }
     }
 
     return (
@@ -60,7 +60,7 @@ export default function Login() {
             </View>
 
             <View style={styles.loginFormBox}>
-                <TextInput onChangeText={email => setEmail(email)} style={styles.loginFormBoxInput} placeholsder="Email" />
+                <TextInput onChangeText={email => setEmail(email)} style={styles.loginFormBoxInput} placeholder="Email" />
                 <TextInput onChangeText={senha => setSenha(senha)} style={styles.loginFormBoxInput} placeholder="Senha" />
 
                 <TouchableOpacity onPress={Logar} style={styles.loginBotaoCadastrar}>

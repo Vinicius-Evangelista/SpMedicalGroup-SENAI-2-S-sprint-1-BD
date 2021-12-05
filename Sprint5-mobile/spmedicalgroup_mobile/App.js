@@ -4,14 +4,15 @@ import 'react-native-gesture-handler';
 import React from 'react';
 import { StatusBar } from 'react-native';
 
-//Components 
+//Components Importados
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 
 const AuthStack = createStackNavigator();
 
+//Components Locais
 import Login from "./src/screen/login/login";
-import Main from "./src/screen/main";
+import VerConsultas from "./src/screen/medico/verconsultas"
 
 
 
@@ -29,6 +30,7 @@ export default function Stack ()  {
       }}
       >
         <AuthStack.Screen name = "Login" component = {Login} />
+        <AuthStack.Screen name = "VerConsulta" component = {VerConsultas} />
         {/* <AuthStack.Screen name = "Main" component = {Main} /> */}
       </AuthStack.Navigator>
     </NavigationContainer>

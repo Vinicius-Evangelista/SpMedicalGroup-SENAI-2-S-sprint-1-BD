@@ -5702,19 +5702,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\52645548890\\.nuget\\packages\\": {}
+    "C:\\Users\\Vinicius\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\52645548890\\Desktop\\SpMedicalGroup-SENAI-2S\\Sprint2-Back-end\\SpMedicalGroup.webApi\\SpMedicalGroup.webApi\\SpMedicalGroup.webApi.csproj",
+      "projectUniqueName": "C:\\Users\\Vinicius\\Desktop\\SpMedicalGroup-SENAI-2S\\Sprint2-back-end\\SpMedicalGroup.webApi\\SpMedicalGroup.webApi\\SpMedicalGroup.webApi.csproj",
       "projectName": "SpMedicalGroup.webApi",
-      "projectPath": "C:\\Users\\52645548890\\Desktop\\SpMedicalGroup-SENAI-2S\\Sprint2-Back-end\\SpMedicalGroup.webApi\\SpMedicalGroup.webApi\\SpMedicalGroup.webApi.csproj",
-      "packagesPath": "C:\\Users\\52645548890\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\52645548890\\Desktop\\SpMedicalGroup-SENAI-2S\\Sprint2-Back-end\\SpMedicalGroup.webApi\\SpMedicalGroup.webApi\\obj\\",
+      "projectPath": "C:\\Users\\Vinicius\\Desktop\\SpMedicalGroup-SENAI-2S\\Sprint2-back-end\\SpMedicalGroup.webApi\\SpMedicalGroup.webApi\\SpMedicalGroup.webApi.csproj",
+      "packagesPath": "C:\\Users\\Vinicius\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Vinicius\\Desktop\\SpMedicalGroup-SENAI-2S\\Sprint2-back-end\\SpMedicalGroup.webApi\\SpMedicalGroup.webApi\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\52645548890\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Vinicius\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -5799,7 +5799,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.402\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.403\\RuntimeIdentifierGraph.json"
       }
     }
   }
