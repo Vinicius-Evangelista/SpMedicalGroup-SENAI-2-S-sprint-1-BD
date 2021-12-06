@@ -41,7 +41,7 @@ export default function VerConsulta() {
         <View style={styles.container}>
             <View >
                 <View style={styles.header}>
-                    <Text style={styles.textHeader}>Minhas Consultas</Text>
+                    <Text style={styles.textHeader}>Minhas Consultas Medico</Text>
                 </View>
             </View>
         </View>

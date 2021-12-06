@@ -33,10 +33,10 @@ namespace SpMedicalGroup.webApi.Contexts
             if (!optionsBuilder.IsConfigured)
             {
                 //Vincius - Casa
-                optionsBuilder.UseSqlServer(@"Data Source= DESKTOP-DHSRSVI\SQLEXPRESS; initial catalog=Sp_medical_group; user Id=sa; pwd=senai@132;");
+                // optionsBuilder.UseSqlServer(@"Data Source= DESKTOP-DHSRSVI\SQLEXPRESS; initial catalog=Sp_medical_group; user Id=sa; pwd=senai@132;");
 
                 //Vinicius - Senai
-                // optionsBuilder.UseSqlServer(@"Data Source= DESKTOP-9K54HD5\SQLEXPRESS; initial catalog=Sp_medical_group_tarde; user Id=sa; pwd=senai@132;");
+                 optionsBuilder.UseSqlServer(@"Data Source= DESKTOP-9K54HD5\SQLEXPRESS; initial catalog=Sp_medical_group_tarde; user Id=sa; pwd=senai@132;");
 
             }
         }

@@ -37,10 +37,10 @@ export default function Login() {
 
             if (resposta.status === 200) {
                 if(jwtDecode(token).role == 2 ){
-                    navigation.navigate("VerConsulta")
+                    navigation.navigate("Main")
                 }
                 else if(jwtDecode(token).role == 1){
-                    navigation.navigate("VerConsulta")
+                    navigation.navigate("Main")
                 } else {
                     Alert.alert('403');
                 }
