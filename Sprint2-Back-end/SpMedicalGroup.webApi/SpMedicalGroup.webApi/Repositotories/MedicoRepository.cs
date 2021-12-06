@@ -49,7 +49,11 @@ namespace SpMedicalGroup.webApi.Repositotories
 
                   IdMedicoNavigation = new Medico()
                   {
-                      NomeMedico = a.IdMedicoNavigation.NomeMedico
+                      NomeMedico = a.IdMedicoNavigation.NomeMedico,
+                      IdEspecialidadeNavigation = new Especialidade()
+                      {
+                          TituloEspecialidade = a.IdMedicoNavigation.IdEspecialidadeNavigation.TituloEspecialidade
+                      }
                   },
 
                   IdProntuarioNavigation = new Prontuario()
@@ -88,7 +92,7 @@ namespace SpMedicalGroup.webApi.Repositotories
 
                     IdMedicoNavigation = new Medico()
                     {
-                        NomeMedico = a.IdMedicoNavigation.NomeMedico
+                        NomeMedico = a.IdMedicoNavigation.NomeMedico,
                     },
 
                     IdProntuarioNavigation = new Prontuario()
