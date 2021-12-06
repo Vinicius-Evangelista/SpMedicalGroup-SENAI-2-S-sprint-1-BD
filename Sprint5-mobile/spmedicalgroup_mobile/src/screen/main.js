@@ -30,6 +30,7 @@ export default function Main() {
                             return (
                                 <Image
                                     source={require('../../assets/img/consulta-icon.png')}
+                                    style = {styles.icon}
                                 />
                             );
                         }
@@ -51,5 +52,10 @@ export default function Main() {
 const styles = StyleSheet.create({
     main: {
         flex: 1
+    },
+
+    icon : {
+        width : 40,
+        height : 30
     }
 });
