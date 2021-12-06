@@ -14,8 +14,6 @@ const AuthStack = createStackNavigator();
 import Login from "./src/screen/login/login";
 import Main from './src/screen/main'
 
-
-
 export default function Stack ()  {
   return (
     <NavigationContainer>

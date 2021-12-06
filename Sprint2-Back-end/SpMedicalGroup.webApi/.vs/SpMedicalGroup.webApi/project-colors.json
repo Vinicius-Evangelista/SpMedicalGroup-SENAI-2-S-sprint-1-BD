@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "280dff6b-f6ad-4ca8-b524-483a14b230c4": {
+      "ProjectGuid": "280dff6b-f6ad-4ca8-b524-483a14b230c4",
+      "DisplayName": "SpMedicalGroup.webApi",
+      "ColorIndex": 0
+    }
+  },
+  "NextColorIndex": 1
+}

@@ -179,7 +179,6 @@ C:\Users\52645548890\Desktop\SpMedicalGroup-SENAI-2S\Sprint2-Back-end\SpMedicalG
 C:\Users\52645548890\Desktop\SpMedicalGroup-SENAI-2S\Sprint2-Back-end\SpMedicalGroup.webApi\SpMedicalGroup.webApi\obj\Debug\net5.0\SpMedicalGroup.webApi.MvcApplicationPartsAssemblyInfo.cs
 C:\Users\52645548890\Desktop\SpMedicalGroup-SENAI-2S\Sprint2-Back-end\SpMedicalGroup.webApi\SpMedicalGroup.webApi\obj\Debug\net5.0\SpMedicalGroup.webApi.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\52645548890\Desktop\SpMedicalGroup-SENAI-2S\Sprint2-Back-end\SpMedicalGroup.webApi\SpMedicalGroup.webApi\obj\Debug\net5.0\staticwebassets\SpMedicalGroup.webApi.StaticWebAssets.Manifest.cache
-C:\Users\52645548890\Desktop\SpMedicalGroup-SENAI-2S\Sprint2-Back-end\SpMedicalGroup.webApi\SpMedicalGroup.webApi\obj\Debug\net5.0\staticwebassets\SpMedicalGroup.webApi.StaticWebAssets.xml
 C:\Users\52645548890\Desktop\SpMedicalGroup-SENAI-2S\Sprint2-Back-end\SpMedicalGroup.webApi\SpMedicalGroup.webApi\obj\Debug\net5.0\scopedcss\bundle\SpMedicalGroup.webApi.styles.css
 C:\Users\52645548890\Desktop\SpMedicalGroup-SENAI-2S\Sprint2-Back-end\SpMedicalGroup.webApi\SpMedicalGroup.webApi\obj\Debug\net5.0\SpMedicalGroup.webApi.RazorTargetAssemblyInfo.cache
 C:\Users\52645548890\Desktop\SpMedicalGroup-SENAI-2S\Sprint2-Back-end\SpMedicalGroup.webApi\SpMedicalGroup.webApi\obj\Debug\net5.0\SpMedicalGroup.webApi.dll
@@ -321,3 +320,5 @@ C:\Users\Vinicius\Desktop\SpMedicalGroup-SENAI-2S\Sprint2-back-end\SpMedicalGrou
 C:\Users\Vinicius\Desktop\SpMedicalGroup-SENAI-2S\Sprint2-back-end\SpMedicalGroup.webApi\SpMedicalGroup.webApi\obj\Debug\net5.0\SpMedicalGroup.webApi.xml
 C:\Users\Vinicius\Desktop\SpMedicalGroup-SENAI-2S\Sprint2-back-end\SpMedicalGroup.webApi\SpMedicalGroup.webApi\obj\Debug\net5.0\SpMedicalGroup.webApi.pdb
 C:\Users\Vinicius\Desktop\SpMedicalGroup-SENAI-2S\Sprint2-back-end\SpMedicalGroup.webApi\SpMedicalGroup.webApi\obj\Debug\net5.0\SpMedicalGroup.webApi.genruntimeconfig.cache
+C:\Users\52645548890\Desktop\SpMedicalGroup-SENAI-2S\Sprint2-Back-end\SpMedicalGroup.webApi\SpMedicalGroup.webApi\bin\Debug\net5.0\SpMedicalGroup.webApi.StaticWebAssets.xml
+C:\Users\52645548890\Desktop\SpMedicalGroup-SENAI-2S\Sprint2-Back-end\SpMedicalGroup.webApi\SpMedicalGroup.webApi\obj\Debug\net5.0\SpMedicalGroup.webApi.csproj.CopyComplete
