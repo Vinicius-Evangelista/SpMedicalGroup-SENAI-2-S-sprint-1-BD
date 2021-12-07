@@ -33,7 +33,7 @@ export default function VerConsulta() {
     }
 
 
-    useEffect(() => {
+    useEffect( () => {
         BuscarConsulta();
     }, []);
 

@@ -19,7 +19,7 @@ export default function Login() {
     const navigation = useNavigation();
 
     //States
-    const [email, setEmail] = useState('ricardo.lemos@spmedicalgroup.com.br');
+    const [email, setEmail] = useState('henrique@gmail.com');
     const [senha, setSenha] = useState('12345678');
     
         async function Logar () {

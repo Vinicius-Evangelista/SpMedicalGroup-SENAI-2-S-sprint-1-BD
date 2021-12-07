@@ -1,5 +1,5 @@
 //Componentes React
-import React, { useEffect } from 'react';
+import React  from 'react';
 import { Image, StatusBar, View, StyleSheet } from 'react-native';
 //Componentes importados
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
@@ -53,12 +53,7 @@ export default function Main() {
                     },
                 })}
             >
-                {
-                    role == 1 ?
-                        <bottomTab.Screen name="Minhas Consultas" component={VerConsultaPaciente} />
-                        :
-                        <bottomTab.Screen name="Minhas Consultas" component={VerConsultaMedico} />
-                }
+                <bottomTab.Screen name="Minhas Consultas" component={ role.role == 1 ? VerConsultaPaciente : VerConsultaMedico } />
             </bottomTab.Navigator>
         </View>
     );
