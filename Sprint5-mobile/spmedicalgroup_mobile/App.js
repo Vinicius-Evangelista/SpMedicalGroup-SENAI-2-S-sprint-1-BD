@@ -16,7 +16,7 @@ import Main from './src/screen/main'
 
 export default function Stack ()  {
   return (
-    <NavigationContainer>
+    <NavigationContainer independent={true}>
       <StatusBar
         hidden = {true}
       />
