@@ -4,6 +4,18 @@
         <name>SpMedicalGroup.webApi</name>
     </assembly>
     <members>
+        <member name="M:SpMedicalGroup.webApi.Interfaces.ILocalizacaoRepository.CadastrarLocalizacao(SpMedicalGroup.webApi.Domains.Localizacao)">
+            <summary>
+            Cadastra uma nova localizacao.
+            </summary>
+            <param name="novaLocalizacao"> nova localizacao contendo latitude e longitude</param>
+        </member>
+        <member name="M:SpMedicalGroup.webApi.Interfaces.ILocalizacaoRepository.ListarLocalizacao">
+            <summary>
+            Lista todas as localizações.
+            </summary>
+            <returns>Retorna uma lista com todas as localizações</returns>
+        </member>
         <member name="T:SpMedicalGroup.webApi.Interfaces.IMedicoRepository">
             <summary>
              Interface responsável por Medico

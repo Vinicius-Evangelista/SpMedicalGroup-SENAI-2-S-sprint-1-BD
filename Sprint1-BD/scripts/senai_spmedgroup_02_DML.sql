@@ -48,7 +48,9 @@ VALUES ('Acupuntura'),
 --usuario
 
 INSERT INTO usuario (idTipoUsuario,nome,email,senha)
-VALUES (2,'Ricardo Lemos','ricardo.lemos@spmedicalgroup.com.br','12345678'),
+VALUES 
+	   (3,'ViniciusAdmin', 'vini.evangelsita@live.com','12345678'),
+	   (2,'Ricardo Lemos','ricardo.lemos@spmedicalgroup.com.br','12345678'),
        (2,'Roberto Porssarle','roberto.possarle@spmedicalgroup.com.br','12345678'),
 	   (2,'Helena Strada','helena.souza@spmedicalgroup.com.br','12345678'),
 	   (1,'Ligia','ligia@gmail.com','12345678'),
