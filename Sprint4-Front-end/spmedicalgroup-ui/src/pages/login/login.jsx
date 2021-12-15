@@ -22,7 +22,7 @@ import "../../style.css";
 export default function Login() {
 
     //States
-    const [email, setEmail] = useState('henrique@gmail.com');
+    const [email, setEmail] = useState('vini.evangelsita@live.com');
     const [senha, setSenha] = useState('12345678');
     const [validacao, setValidacao] = useState(false);
     var navigate = useNavigate();    
@@ -35,7 +35,7 @@ export default function Login() {
         event.preventDefault();
 
         //chamando api
-        axios.post('https://localhost:5001/api/login/login', {
+        axios.post('http://localhost:5001/api/login/login', {
             email: email,
             senha: senha
         })

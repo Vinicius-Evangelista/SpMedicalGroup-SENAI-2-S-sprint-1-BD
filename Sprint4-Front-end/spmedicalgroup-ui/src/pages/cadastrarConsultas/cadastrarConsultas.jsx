@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 //Components
 import HeaderLogado from '../../components/headers/headerLogado.jsx';
 import FooterLogado from '../../components/footers/footerLogado.jsx';
+import { Link } from 'react-router-dom';
 
 //Imagens
 import exameMedico from './assets/img/exame.png';
@@ -28,7 +29,7 @@ export default function CadastrarConsulta() {
 
     //Buscar medicos
     function buscarMedicos() {
-        axios.get('https://localhost:5001/api/usuarios/listar/medicos', {
+        axios.get('http://localhost:5001/api/usuarios/listar/medicos', {
             headers: {
                 Authorization: 'Bearer ' + localStorage.getItem('usuario-login')
             }
@@ -46,7 +47,7 @@ export default function CadastrarConsulta() {
 
     //buscar pacientes
     function buscarPacientes() {
-        axios('https://localhost:5001/api/usuarios/listar/pacientes', {
+        axios('http://localhost:5001/api/usuarios/listar/pacientes', {
             headers: {
                 Authorization: 'Bearer ' + localStorage.getItem('usuario-login')
             }
@@ -75,7 +76,7 @@ export default function CadastrarConsulta() {
             dataConsulta: new Date(dataConsulta)
         }
 
-        axios.post('https://localhost:5001/api/usuarios/admin', consulta, {
+        axios.post('http://localhost:5001/api/usuarios/admin', consulta, {
 
             headers: {
                 Authorization: 'Bearer ' + localStorage.getItem('usuario-login')
@@ -196,6 +197,10 @@ export default function CadastrarConsulta() {
                                         <button type = "submit" className="cadastro-consulta-cadastrar">cadastrar</button> 
                                         <button  className = "cadastro-consulta-cancelar">cancelar</button>
                                     </div>
+
+                                    <Link className="button-ver-consulta" to = {'/mapas'}>
+                                                Ver Localização
+                                            </Link>
                             </form>
                         </div>
                         </div>

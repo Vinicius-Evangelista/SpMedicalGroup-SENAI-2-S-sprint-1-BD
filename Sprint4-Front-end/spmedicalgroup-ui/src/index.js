@@ -25,6 +25,7 @@ import MinhasConsultasMedico from './pages/minhasconsultasmedico/minhasConsultaM
 import VerMinhasConsulta from './pages/vercosultapaciente/verConsultaPaciente';
 import AdicionarDescricao from './pages/adicionardescricao/adicionardescricao.jsx';
 import CadastrarUsuario from './pages/cadastrarusuario/cadastrarUsuario';
+import Mapa from './pages/mapas/maps.jsx'
 
 import reportWebVitals from './reportWebVitals';
 
@@ -69,7 +70,9 @@ const routing = (
         <Route path="cadastrarconsultas" element={<PermissaoAdm>
           <CadastrarConsulta />
           </PermissaoAdm>} />
+      <Route path = "mapas" element ={<Mapa/>}/> 
       </Routes>
+
     </div>
   </Router>
 );
