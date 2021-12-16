@@ -22,8 +22,8 @@ import "../../style.css";
 export default function Login() {
 
     //States
-    const [email, setEmail] = useState('vini.evangelsita@live.com');
-    const [senha, setSenha] = useState('12345678');
+    const [email, setEmail] = useState('vini.evagelista@live.com');
+    const [senha, setSenha] = useState('admin123');
     const [validacao, setValidacao] = useState(false);
     var navigate = useNavigate();    
 
@@ -35,7 +35,7 @@ export default function Login() {
         event.preventDefault();
 
         //chamando api
-        axios.post('http://localhost:5001/api/login/login', {
+        axios.post('http://localhost:5001/api/Login/login', {
             email: email,
             senha: senha
         })

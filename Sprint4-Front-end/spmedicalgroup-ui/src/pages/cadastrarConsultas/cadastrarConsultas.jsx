@@ -8,6 +8,7 @@ import { Link } from 'react-router-dom';
 
 //Imagens
 import exameMedico from './assets/img/exame.png';
+import IconMap from './assets/img/map-icon.png'
 
 //Css
 import '../../style.css';
@@ -137,81 +138,85 @@ export default function CadastrarConsulta() {
                                         {listaPacientes.map((paciente) => {
                                             return (
 
-                                                <option key = {paciente.idProntuario} value={paciente.idProntuario}>
+                                                <option key={paciente.idProntuario} value={paciente.idProntuario}>
                                                     {paciente.idUsuarioNavigation.nome}
                                                 </option>
                                             );
                                         })}
-                                        
+
                                     </select>
 
 
-                                        {/* Select médicos */}
-                                        <select 
-                                        name = "idMedico"
-                                        value = {idMedico}
+                                    {/* Select médicos */}
+                                    <select
+                                        name="idMedico"
+                                        value={idMedico}
                                         className="input-nome-medico"
-                                        onChange = {event => setIdMedico(event.target.value)}
+                                        onChange={event => setIdMedico(event.target.value)}
                                         required
-                                        >
+                                    >
 
-                                        <option value = "0">Selecione o médico</option>
+                                        <option value="0">Selecione o médico</option>
 
                                         {listaMedicos.map((medico) => {
-                                            return(
-                                                
-                                                <option key = {medico.idMedico} value = {medico.idMedico}>
+                                            return (
+
+                                                <option key={medico.idMedico} value={medico.idMedico}>
                                                     {medico.nomeMedico}
                                                 </option>
                                             );
                                         })}
-                                        </select>
-                                      
+                                    </select>
 
-                                        <div className="data-e-situacao">
-                                           
-                                           {/* Select Situacao */}
 
-                                            <select name="idSituacao" 
-                                            value = {idSituacao}
-                                            onChange = {event => setSituacao(event.target.value)}
+                                    <div className="data-e-situacao">
+
+                                        {/* Select Situacao */}
+
+                                        <select name="idSituacao"
+                                            value={idSituacao}
+                                            onChange={event => setSituacao(event.target.value)}
                                             className="campo-situacao"
                                             required
-                                            >
-                                                <option value="0">Situacao</option>
-                                                <option value="1">Realizada</option>
-                                                <option value="2">Cancelada</option>
-                                                <option value="3">Agendada</option>
-                                            </select>
-                                            <input className="input-data" type="datetime-local" 
-                                            
-                                            name = "dataConsuta"
-                                            value = {dataConsulta}
-                                            onChange = {(event) => setDataConsuta(event.target.value)}
-                                            required
-                                            />
-                                         </div>
-                                        <textarea name="descricao" id="" cols="30" rows="10" className="descricao-cadastro-consulta" value = "A descrição será colocada pelo médico." disabled/>
-                                </div>
-                                    <div className="form-cadastro-button">
-                                        <button type = "submit" className="cadastro-consulta-cadastrar">cadastrar</button> 
-                                        <button  className = "cadastro-consulta-cancelar">cancelar</button>
-                                    </div>
+                                        >
+                                            <option value="0">Situacao</option>
+                                            <option value="1">Realizada</option>
+                                            <option value="2">Cancelada</option>
+                                            <option value="3">Agendada</option>
+                                        </select>
+                                        <input className="input-data" type="datetime-local"
 
-                                    <Link className="button-ver-consulta" to = {'/mapas'}>
-                                                Ver Localização
-                                            </Link>
+                                            name="dataConsuta"
+                                            value={dataConsulta}
+                                            onChange={(event) => setDataConsuta(event.target.value)}
+                                            required
+                                        />
+                                    </div>
+                                    <textarea name="descricao" id="" cols="30" rows="10" className="descricao-cadastro-consulta" value="A descrição será colocada pelo médico." disabled />
+                                </div>
+                                <div className="form-cadastro-button">
+                                    <button type="submit" className="cadastro-consulta-cadastrar">cadastrar</button>
+                                    <button className="cadastro-consulta-cancelar">cancelar</button>
+                                </div>
                             </form>
                         </div>
+
+                        <div className="ver-localizacao-box">
+                            <img src={IconMap} alt=" icone mapa" />
+                            <Link className="ver-localizacao-button" to={'/mapas'}>
+                                Ver Localização
+                            </Link>
+                            
                         </div>
                     </div>
+                </div>
             </main>
 
-                {/* Footer */}
-                <FooterLogado />
+            {/* Footer */}
+            <FooterLogado />
         </div>
 
 
-            );
+    );
 
 }
