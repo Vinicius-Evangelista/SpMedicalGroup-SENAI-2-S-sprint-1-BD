@@ -37,7 +37,7 @@ export default function Mapa() {
         }
 
     return (
-        <LoadScript>
+        <LoadScript googleMapsApiKey='AIzaSyBBZYzs6HaSyjeVDFe-6UuasHX7XSB3Z5E' >
             <GoogleMap
                 center={center}
                 zoom={10}
