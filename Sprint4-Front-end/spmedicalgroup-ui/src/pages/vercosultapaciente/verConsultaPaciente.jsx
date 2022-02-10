@@ -17,14 +17,13 @@ import axios from "axios";
 export default function VerMinhasConsulta() {
 
     //pegando o id da url
-    const { id } = useParams();
     const [ConsultaPaciente, setConsultaPaciente] = useState([]);
 
 
 
-    function BuscarMinhasConsultas() {
+    async function BuscarMinhasConsultas() {
 
-        axios('https://localhost:5001/api/prontuarios/listar/' + id, {
+        await axios('https://620556ad161670001741b92d.mockapi.io/agendamento/1', {
 
             //passando o token que já foi atribuido no login
             headers: {
@@ -36,7 +35,7 @@ export default function VerMinhasConsulta() {
                 if (resposta.status === 200) {
                     //atribuindo ao state
                     setConsultaPaciente(resposta.data);
-                    console.log()
+
                 }
 
             })
@@ -71,9 +70,8 @@ export default function VerMinhasConsulta() {
                         <h1>Consultas</h1>
 
 
-                        {ConsultaPaciente.map((consulta) => {
-                            return (
-                                <div key = {consulta.idAgendamento} className="consultas-box">
+                        {
+                                <div key = {ConsultaPaciente.idAgendamento} className="consultas-box">
                                     <div className="titulo-tipo-medico">
                                         <div className="consultas-separador"></div>
                                         <span>Clínicos Geral</span>
@@ -88,14 +86,14 @@ export default function VerMinhasConsulta() {
 
                                         <div className="nome-paciente">
                                             <span>Nome paciente:</span>
-                                            <span className="nome">{consulta.idProntuarioNavigation.idUsuarioNavigation.nome}</span>
+                                            <span className="nome">{ConsultaPaciente.idProntuario[0].nome}</span>
                                         </div>
                                         <div className="separador-dados"></div>
 
                                         {/* <!-- NOME MÉDICO --> */}
                                         <div className="nome-medico">
                                             <span>Nome do médico:</span>
-                                            <span className="medico">{consulta.idMedicoNavigation.nomeMedico}</span>
+                                            <span className="medico">{ConsultaPaciente.idMedicoNavigation[0].nomeMedico}</span>
                                         </div>
                                         <div className="separador-dados"></div>
 
@@ -104,34 +102,30 @@ export default function VerMinhasConsulta() {
 
                                             {/* <!-- SITUAÇÃO --> */}
                                             <div className="nome-situacao">
-                                                <div className="situacao-e-data-box">
-                                                    <span>Situação:</span>
-                                                    <span className="situacao">{consulta.idSituacaoNavigation.estadoSituacao}</span>
-                                                </div>
-                                                <div className="separador-situacao-data"></div>
+                                                <div className="separador-situacao-data">{ConsultaPaciente.idSituacao[0].estadoConsulta}</div>
                                             </div>
 
                                             {/* Horario */}
                                             <div className="nome-data">
-                                                <div className="situacao-e-data-box">
+                                                {/* <div className="situacao-e-data-box">
                                                     <span>Horario:</span>
                                                     <span className="data">{Intl.DateTimeFormat("pt-BR", {
                                                     year: 'numeric', month: 'numeric', day: 'numeric',
                                                     hour: 'numeric', minute: 'numeric', hour12: true
                                                 }).format(new Date(consulta.dataConsulta)).split(' ')[1]}h</span>
-                                                </div>
+                                                </div> */}
                                                 <div className="separador-situacao-data"></div>
                                             </div>
 
                                             {/* <!-- DATA --> */}
                                             <div className="nome-data">
-                                                <div className="situacao-e-data-box">
+                                                {/* <div className="situacao-e-data-box">
                                                     <span>Data:</span>
                                                     <span className="data">{Intl.DateTimeFormat("pt-BR", {
                                                     year: 'numeric', month: 'numeric', day: 'numeric',
                                                     hour: 'numeric', minute: 'numeric', hour12: true
-                                                }).format(new Date(consulta.dataConsulta)).split(' ')[0]}</span>
-                                                </div>
+                                                }).format(new Date(consulta.dataConsulta)).split(' ')[0]}</span> */}
+                                                {/* </div> */}
                                                 <div className="separador-situacao-data"></div>
                                             </div>
 
@@ -143,13 +137,13 @@ export default function VerMinhasConsulta() {
                                     {/* <!-- DESCRIÇÃO --> */}
                                     <form action="">
                                         <div className="box-button">
-                                            <textarea name="" id="" cols="30" rows="10" placeholder="Coloque a descrição..." value = {consulta.descricao} disabled></textarea>
+                                            <textarea name="" id="" cols="30" rows="10" placeholder="Coloque a descrição..." value = {ConsultaPaciente.descricao} disabled></textarea>
                                             <button type="submit">atualizar</button>
                                         </div>
                                     </form>
                                 </div>
-                            )
-                        })}
+                            
+                        })
 
 
                     </div>

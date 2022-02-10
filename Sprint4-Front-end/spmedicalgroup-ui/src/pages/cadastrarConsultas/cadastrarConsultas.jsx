@@ -30,7 +30,7 @@ export default function CadastrarConsulta() {
 
     //Buscar medicos
     function buscarMedicos() {
-        axios.get('http://localhost:5001/api/usuarios/listar/medicos', {
+        axios.get('https://620556ad161670001741b92d.mockapi.io/medico', {
             headers: {
                 Authorization: 'Bearer ' + localStorage.getItem('usuario-login')
             }
@@ -48,7 +48,7 @@ export default function CadastrarConsulta() {
 
     //buscar pacientes
     function buscarPacientes() {
-        axios('http://localhost:5001/api/usuarios/listar/pacientes', {
+        axios('https://620556ad161670001741b92d.mockapi.io/Prontuario', {
             headers: {
                 Authorization: 'Bearer ' + localStorage.getItem('usuario-login')
             }
@@ -65,35 +65,35 @@ export default function CadastrarConsulta() {
     }
 
     //Cadastrar consulta
-    function FazerAgendamento(event) {
-        event.preventDefault();
+    // function FazerAgendamento(event) {
+    //     event.preventDefault();
 
-        setLoading(true)
+    //     setLoading(true)
 
-        let consulta = {
-            idMedico: idMedico,
-            idProntuario: idProntuario,
-            idSituacao: idSituacao,
-            dataConsulta: new Date(dataConsulta)
-        }
+    //     let consulta = {
+    //         idMedico: idMedico,
+    //         idProntuario: idProntuario,
+    //         idSituacao: idSituacao,
+    //         dataConsulta: new Date(dataConsulta)
+    //     }
 
-        axios.post('http://localhost:5001/api/usuarios/admin', consulta, {
+    //     axios.post('http://localhost:5001/api/usuarios/admin', consulta, {
 
-            headers: {
-                Authorization: 'Bearer ' + localStorage.getItem('usuario-login')
-            }
-        })
+    //         headers: {
+    //             Authorization: 'Bearer ' + localStorage.getItem('usuario-login')
+    //         }
+    //     })
 
-            .then((resposta) => {
-                if (resposta.status === 201) {
-                    setLoading(false)
-                    console.log('consulta cadastrada')
-                }
+    //         .then((resposta) => {
+    //             if (resposta.status === 201) {
+    //                 setLoading(false)
+    //                 console.log('consulta cadastrada')
+    //             }
 
-            })
+    //         })
 
-            .then(erro => console.log(erro))
-    }
+    //         .then(erro => console.log(erro))
+    // }
 
     //Ciclos de vida
     useEffect(buscarPacientes, []);
@@ -118,7 +118,7 @@ export default function CadastrarConsulta() {
                     <div className="form-cadastro-consulta">
                         <h1>Cadastro de Consultas</h1>
                         <div className="form-cadastro-box">
-                            <form onSubmit={FazerAgendamento}>
+                            <form /*</div>onSubmit={FazerAgendamento}*/>
                                 <div className="cadastro-consulta-box">
 
                                     {/* select para ver todos o pacientes possíveis pegando com um select */}
@@ -139,7 +139,7 @@ export default function CadastrarConsulta() {
                                             return (
 
                                                 <option key={paciente.idProntuario} value={paciente.idProntuario}>
-                                                    {paciente.idUsuarioNavigation.nome}
+                                                    {paciente.nome}
                                                 </option>
                                             );
                                         })}

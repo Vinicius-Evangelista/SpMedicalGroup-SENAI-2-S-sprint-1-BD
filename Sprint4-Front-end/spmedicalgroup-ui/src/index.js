@@ -34,26 +34,26 @@ import reportWebVitals from './reportWebVitals';
 //Permissões
 
 //Children : "filho" (CadastrarConsulta) que está dentro do PermissaoAdm.
-const PermissaoPaciente = ({ children }) => {
-  return( 
-    usuarioAutenticado() && parseJwt().role === '1' ?
-     children : <Navigate to="/login" /> 
-  );
-}
+// const PermissaoPaciente = ({ children }) => {
+//   return( 
+//     usuarioAutenticado() && parseJwt().role === '1' ?
+//      children : <Navigate to="/login" /> 
+//   );
+// }
 
-const PermissaoMedico = ({ children }) => {
-  return( 
-    usuarioAutenticado() && parseJwt().role === '2' ?
-     children : <Navigate to="/login" /> 
-  );
-}
+// const PermissaoMedico = ({ children }) => {
+//   return( 
+//     usuarioAutenticado() && parseJwt().role === '2' ?
+//      children : <Navigate to="/login" /> 
+//   );
+// }
 
-const PermissaoAdm = ({ children }) => {
-  return( 
-    usuarioAutenticado() && parseJwt().role === '3' ?
-     children : <Navigate to="/login" /> 
-  );
-}
+// const PermissaoAdm = ({ children }) => {
+//   return( 
+//     usuarioAutenticado() && parseJwt().role === '3' ?
+//      children : <Navigate to="/login" /> 
+//   );
+// }
 
 
 //Rotas
@@ -61,15 +61,13 @@ const routing = (
   <Router>
     <div>
       <Routes>
-        <Route path="minhasconsultas" element={<PermissaoPaciente><MinhasConsultas/></PermissaoPaciente>} />
+        <Route path="minhasconsultas" element={<MinhasConsultas/>} />
         <Route path="login" element={<Login />}/>
-        <Route path="verminhasconsultas/:id" element={<PermissaoPaciente><VerMinhasConsulta/></PermissaoPaciente>}/>
-        <Route path="adicionardescricao/:id" element={<PermissaoMedico><AdicionarDescricao/></PermissaoMedico>}/>
-        <Route path="minhasconsultasmedico" element={<PermissaoMedico><MinhasConsultasMedico/></PermissaoMedico>} />
-        <Route path="cadastrarusuario" element={<PermissaoAdm><CadastrarUsuario/></PermissaoAdm>} />
-        <Route path="cadastrarconsultas" element={<PermissaoAdm>
-          <CadastrarConsulta />
-          </PermissaoAdm>} />
+        <Route path="verminhasconsultas/:id" element={<VerMinhasConsulta/>}/>
+        <Route path="adicionardescricao/:id" element={<AdicionarDescricao/>}/>
+        <Route path="minhasconsultasmedico" element={<MinhasConsultasMedico/>} />
+        <Route path="cadastrarusuario" element={<CadastrarUsuario/>} />
+        <Route path="cadastrarconsultas" element={<CadastrarConsulta/>} />
       <Route path = "mapas" element ={<Mapa/>}/> 
       </Routes>
 
